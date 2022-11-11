@@ -18,4 +18,5 @@
     {
         exit("Error: " . $e->getMessage());
     }
+    echo "connection success <?php echo htmlentities($cleardb_username)?>"
 ?>

@@ -1,22 +1,21 @@
 <?php
-    //Recup des info de Connection CLEARDB
-    $cleardb_url = parse_url(getenv("CLEARDB_DATABASE_URL"));
-    $cleardb_server = $cleardb_url["host"];
-    $cleardb_username = $cleardb_url["user"];
-    $cleardb_password = $cleardb_url["pass"];
-    $cleardb_db = substr($cleardb_url["path"],1);
-    $active_group = 'default';
-    $query_builder = TRUE;
-    // Connect to DB
-    $conn = mysqli_connect($cleardb_server, $cleardb_username, $cleardb_password, $cleardb_db);
-    
-    try
-    {
-        $dbh = new PDO("mysql:host=".$cleardb_server.";dbname=".$cleardb_db,$cleardb_username, $cleardb_password,array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"));
-    }
-    catch (PDOException $e)
-    {
-        exit("Error: " . $e->getMessage());
-    }
-    echo "connection success <?php echo htmlentities($cleardb_username)?>"
+
+//  apper le fichier  includephp/connectiondb.php
+include('includephp/connectionbd.php');
+
+$ret="SELECT * from tblcategory";
+$query1 = $dbh -> prepare($ret);
+$query1->execute();
+$resultss=$query1->fetchAll(PDO::FETCH_OBJ);
+
 ?>
+<!DOCTYPE HTML>
+<html>
+<head>
+</head>
+    <body>
+        <div class="header">
+            Nom de l'Administrateur est  -  <?php echo htmlentities($rows->ID)?>;
+        </div>">
+    </body>
+</html>

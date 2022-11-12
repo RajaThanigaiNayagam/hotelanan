@@ -53,6 +53,6 @@ include('includephp/connectionbd.php');
 		</div>
 		<!--about-->
 	</div>
-	<?php include_once('includes/footer.php');?>
+	<?php include_once('includephp/footer.php');?>
 </body>
 </html>

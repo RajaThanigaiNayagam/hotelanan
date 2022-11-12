@@ -47,7 +47,7 @@ include('includephp/connectionbd.php');
 				<!--header-->
 		<div class="header head-top">
 			<div class="container">
-				<?php include_once('includes/header.php');?>
+				<?php include_once('includephp/header.php');?>
 			</div>
 		</div>
 		<!--header-->
@@ -114,6 +114,6 @@ include('includephp/connectionbd.php');
 				</div>
 			</div>
 		</div>
-		<?php include_once('includes/footer.php');?>
+		<?php include_once('includephp/footer.php');?>
 	</body>
 </html>

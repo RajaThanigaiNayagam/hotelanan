@@ -2,9 +2,10 @@
 body{
 	padding:0 0;
 	margin:0 0;
-    font-family: 'Rancho', cursive;
+     font-family: 'Rancho', cursive;
     font-family: 'Open Sans', sans-serif;
 }
+
 body a{
     transition:0.5s all;
 	-webkit-transition:0.5s all;
@@ -20,14 +21,15 @@ input[type="button"]{
 	-o-transition:0.5s all;
 	-ms-transition:0.5s all;
 }
-
-.nav-item .nav-link .dropdown-item{
-    color: #000;
+.nav-item .nav-link{
+    color: #fff;
     font-family: 'Rancho', cursive;
     font-size: 1.8em;
 }
 
 .header-top {
+    background-color: #bae2b1;
+    font-family: 'Kolker Brush', cursive;
     margin-top: 1em;
 }
 .navbar-brand {
@@ -36,6 +38,7 @@ input[type="button"]{
 }
 .navbar {
     border-radius: 0px;
+	position: sticky;
 }
 .navbar-nav {
     float: right;
@@ -53,16 +56,16 @@ input[type="button"]{
     text-decoration: none;
 	color:#4a7940;
 	font-size: 1.5em;
-    font-family: 'Rancho', cursive;
+    font-family: 'Kolker Brush', cursive;
     text-transform: capitalize;
     letter-spacing: 2px;
-	line-height: .5px;
+	line-height: 0px;
 
 }
 .navbar-default .navbar-nav > li > a {
     color: #fff;
-    font-family: 'Rancho', cursive;
-    font-size: 1.4em;
+    font-family: 'Kolker Brush', cursive;
+    font-size: 2em;
 }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
     color: #fff;
@@ -75,7 +78,7 @@ input[type="button"]{
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
     color: #fff;
     text-decoration: none;
-    background-color: #5ab645;
+    background-color: #bae2b1;
 }
 .navbar {
     position: relative;
@@ -87,7 +90,7 @@ input[type="button"]{
     float: left;
     height: 0px;
     padding: 0px 15px;
-    font-size: 14px;
+    font-size: 18px;
     line-height: 20px;
 }
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-brand h1 a:hover, .nav-link:hover, .navbar-default .navbar-nav > .open > a:focus {
@@ -97,9 +100,9 @@ input[type="button"]{
 .dropdown-menu > li > a {
     display: block;
     padding: 10px 20px;
-	color: #000;
-    font-family: 'Rancho', cursive;
-	font-size: 1.2em;
+	color: #fff;
+    font-family: 'Kolker Brush', cursive;
+	font-size: 1.8em;
 }
 .navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
     margin-left: 0px;
@@ -129,8 +132,7 @@ input[type="button"]{
 	padding-bottom: 4em;
 }
 
-
-/** -----------Footer section-------------------- */
+/** ------------------------Footer section------------------------- */
 .footer-section{
 	padding:2em 0;
 	text-align:center;
@@ -153,8 +155,6 @@ input[type="button"]{
 .footer-top a {
 	margin: 0 0.3em
 }
-/** -----------Footer section-------------------- */
-
 /** ------------------------Footer section------------------------- */
 
 
@@ -163,9 +163,9 @@ input[type="button"]{
 	padding: 4em 0;
 }
 .contact h2 {
-	font-size: 2.5em;
+	font-size: 1.5em;
     text-transform: capitalize;
-    font-family: 'Rancho', cursive;
+    font-family: 'Rancho-Regular';
     color: #222;
 	text-align:center;
 }
@@ -187,9 +187,9 @@ input[type="button"]{
     text-decoration: none;
     color: #777;
 }
-/*address {
+address {
    margin: 1em 0 0;
- }*/
+ }
 .contact-right h5{
 	font-size:1em;
 	text-transform: uppercase;
@@ -231,4 +231,522 @@ input[type="button"]{
 }
 /*** -----------------fin du page de contact --------------------- ***/
 
+
+
+/** -----------------responsive------------------**/
+/*@media (max-width:480px){
+    .header {
+        background: url(../images/hotelfront.jpg) no-repeat 0px 0px;
+        background-size: cover;
+    }
+}
+
+@media (max-width:320px){
+    .header {
+    background: url(../images/hotelfront.jpg) no-repeat 0px 0px;
+    background-size: cover;
+        min-height: 260px;
+    }
+}*/
+
+
+@media (max-width:1440px){
+    .header {
+        min-height: 679px;
+    }
+}
+@media (max-width:1366px){
+    .header {
+        min-height: 652px;
+    }
+}
+@media (max-width:1280px){
+    .header {
+        min-height: 602px;
+    }
+}
+@media (max-width:1080px){
+    .header {
+        min-height: 486px;
+    }
+    .Welcome-section h2,.about-section h2,.services-main h2,.room-section h2 ,.gallery-info h2,h2.type,.contact h2{
+        font-size: 3em;
+    }
+    .welcome-grid h4,.feature1 h4,.touch-grid h4 ,.choose-grid h4,.team-grid h4,.offer-grid h4,.offer-grid1 h4,.serv-text h4,.packages-grid h4,.room-grid1 h4{
+        font-size: 1.4em;
+    }
+    .welcome-grid p,.feature2 p,.popular-grid1 p,.touch-grid p,.about-section p,.choose-grid p,.team-grid p,.offer-grid p,.serv-text p,.packages-grid p,.room-grid1 p,.contact-left p {
+        font-size: 0.965em;
+    }
+    .features h3,.popular-grid h3, .popular-grid1 h3,.touch-section h3,.why-choose h3,.ourteam h3,.whatweoffer h3,.packages-section h3 {
+        font-size: 3em;
+    }
+    .about-section h5 {
+        font-size: 1.1em;
+    }
+    .contact-right h5 {
+        font-size: 0.96em;
+    }
+    .google-map iframe {
+        min-height: 350px;
+    }
+}
+
+
+@media (max-width:991px){
+    .nav > li > a {
+        position: relative;
+        display: block;
+        padding: 10px 10px;
+    }
+    .navbar-brand h1 a {
+        font-size: 1.4em;
+    }
+    .navbar-default .navbar-nav > li > a {
+        font-size: 1.3em;
+    }
+    .header {
+        min-height: 363px;
+    }
+    .Welcome-section,.features,.touch-section,.about-section,.ourteam,.whatweoffer ,.services,.packages-section,.room-section,.gallery-top,.typography,.contact,.why-choose,.most-popular{
+        padding: 3em 0;
+    }
+    .welcome-grid {
+        float: left;
+        width: 33.3%;
+    }
+    .welcome-grid h4, .feature1 h4, .touch-grid h4, .choose-grid h4, .team-grid h4, .offer-grid h4, .offer-grid1 h4, .serv-text h4, .packages-grid h4, .room-grid1 h4 {
+        font-size: 1.3em;
+    }
+    .welcome-grid p, .feature2 p, .popular-grid1 p, .touch-grid p, .about-section p, .choose-grid p, .team-grid p, .offer-grid p, .serv-text p, .packages-grid p, .room-grid1 p, .contact-left p {
+        font-size: 0.95em;
+    }
+    .Welcome-section h2, .about-section h2, .services-main h2, .room-section h2, .gallery-info h2, h2.type, .contact h2 {
+        font-size: 2.7em;
+    }
+    .features h3, .popular-grid h3, .popular-grid1 h3, .touch-section h3, .why-choose h3, .ourteam h3, .whatweoffer h3,.packages-section h3 {
+        font-size: 2.7em;
+    }
+    .popular-grid ul li a {
+        font-size: 0.85em;
+    }
+    .feature-grid {
+        float: left;
+        width: 50%;
+    }
+    .feature-grid:nth-child(3) {
+        margin-top: 1em;
+    }
+    .feature-grid:nth-child(4) {
+        margin-top: 1em;
+    }
+    span.glyphicon.glyphicon-user, span.glyphicon.glyphicon-camera, span.glyphicon.glyphicon-calendar, span.glyphicon.glyphicon-gift {
+    padding: 25px;
+    }
+
+    .nbs-flexisel-nav-left, .nbs-flexisel-nav-right {
+        margin-top: 1.5em;
+    }
+    .popular-grid {
+        float: left;
+        width: 41%
+    }
+    .popular-grid1 {
+        float: left;
+        width: 59%;
+    }
+    .popular-grid1 h4 a {
+        font-size: 0.85em;
+    }
+    .touch-grid {
+        float: left;
+        width: 33.3%;
+    }
+    .touch-grid h5 {
+        font-size: 1em;
+    }
+    .about-section h5 {
+        font-size: 1em;
+    }
+    .choose-grid {
+        float: left;
+        width: 33.3%;
+    }
+    .team-grid {
+        float: left;
+        width: 25%;
+    }
+    .offer-grid {
+        float: left;
+        width: 60%;
+    }
+    .offer-grid1 {
+        float: left;
+        width: 40%;
+    }
+    .serv-img {
+        float: left;
+        width: 40%;
+    }
+    .serv-text {
+        float: left;
+        width: 60%;
+    }
+    .services-grid {
+        margin: 0em 0em 1.5em 0em;
+    }
+    .room-grid {
+        float: left;
+        width: 40%;
+    }
+    .room-grid1 {
+        float: left;
+        width: 60%;
+    }
+    .gallery-grid {
+        float: left;
+        width: 25%;
+    }
+    .contact-left {
+        float: left;
+        width: 50%;
+    }
+    .contact-right {
+        float: left;
+        width: 50%;
+    }
+    .contact-right input[type="text"],.contact-right textarea {
+        padding: 6px 10px;
+    }
+    .contact-right input[type="submit"] {
+        font-size: 0.95em;
+    }
+    .google-map iframe {
+        min-height: 310px;
+    }
+}
+@media (max-width:640px){
+    .navbar-nav {
+        float: none;
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+    .navbar-default .navbar-collapse, .navbar-default .navbar-form {
+        border-color: #652840;
+    }
+    .navbar-toggler{
+        border-color: red;
+        color: red;
+        background-color: #fff;
+    }
+    .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+        background-color: #5ab645;
+    }
+    .navbar-default .navbar-toggle {
+        border-color: #5ab645;
+    }
+    .navbar-default .navbar-toggle .icon-bar .sr-only {
+        background-color: #fff;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+        color: #fff;
+        background-color: transparent;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+        color: #fff;
+    }
+    .navbar-toggle {
+        background-color: #5ab645;
+    }
+    .header-top {
+        padding: 1em 0;
+    }
+    .navbar-brand {
+        padding: 0px 0px;
+    }
+    .navbar-default {
+        padding: .5em 0;
+    }
+    .navbar-brand h1 a {
+        font-size: 1.3em;
+    }
+    .header {
+        min-height: 301px;
+    }
+    .navbar-collapse {
+        max-height: 387px;
+    }
+    .header-top {
+        padding: .5em 0;
+    }
+    .Welcome-section h2, .about-section h2, .services-main h2, .room-section h2, .gallery-info h2, h2.type, .contact h2 {
+        font-size: 2.5em;
+    }
+    .welcome-grid h4, .feature1 h4, .touch-grid h4, .choose-grid h4, .team-grid h4, .offer-grid h4, .offer-grid1 h4, .serv-text h4, .packages-grid h4, .room-grid1 h4 {
+        font-size: 1.2em;
+    }
+    .features h3, .popular-grid h3, .popular-grid1 h3, .touch-section h3, .why-choose h3, .ourteam h3, .whatweoffer h3, .packages-section h3 {
+        font-size: 2.5em;
+    }
+    .head-top {
+        padding-bottom: 0em;
+    }
+    .welcome-grid1:hover {
+        border: 3px solid#5ab645;
+    }
+    .welcome-grid1 {
+        border: 3px solid#fff;
+    }
+    .Welcome-grids,.features-grids,.touch-grids ,.choose-grids,.team-grids,.offer-grids,.packages-grids,.gallery-grids-top,.google-map,.room-grids{
+        margin-top: 2em;
+    }
+    .touch-grid {
+        width: 100%;
+        text-align: left;
+    }
+    .touch-grid:nth-child(2) {
+        margin: 1em 0;
+    }
+    .touch-grid h5 {
+        font-size: 0.95em;
+    }
+    .about-section h5 {
+        font-size: 0.95em;
+    }
+    .team-grid {
+        float: left;
+        width: 50%;
+    }
+    .team-grid:nth-child(3) {
+        margin-top: 1em;
+    }
+    .team-grid:nth-child(4) {
+        margin-top: 1em;
+    }
+    .offer-grid {
+        width: 100%;
+        margin-bottom: 1em;
+    }
+    .offer-grid1 {
+        width: 100%;
+    }
+    .services1 {
+        margin: 2em 0;
+    }
+    .packages-grid {
+        float: left;
+        width: 50%;
+    }
+    .packages-grid1:hover {
+        border: 3px solid#5ab645;
+    }
+    .packages-grid1 {
+        border: 3px solid#fff;
+    }
+    .packages-grid:nth-child(3) {
+        margin-top: 1em;
+    }
+    .packages-grid:nth-child(4) {
+        margin-top: 1em;
+    }
+    .gallery-grid {
+        float: left;
+        width: 50%;
+        margin-bottom: 2em;
+    }
+    .contact-right input[type="submit"] {
+        font-size: 0.92em;
+        width: 25%;
+    }
+    .google-map iframe {
+        min-height: 280px;
+    }
+}
+@media (max-width:480px){
+    .header {
+        background: url(../images/hotelfront.jpg) no-repeat -130px 0px;
+        background-size: cover;
+    }
+    .navbar-brand h1 a {
+        font-size: 1.1em;
+    }
+    .Welcome-section, .features, .touch-section, .about-section, .ourteam, .whatweoffer, .services, .packages-section, .room-section, .gallery-top, .typography, .contact, .why-choose, .most-popular {
+        padding: 2em 0;
+    }
+    .welcome-grid p, .feature2 p, .popular-grid1 p, .touch-grid p, .about-section p, .choose-grid p, .team-grid p, .offer-grid p, .serv-text p, .packages-grid p, .room-grid1 p, .contact-left p {
+        font-size: 0.92em;
+    }
+    .Welcome-section h2, .about-section h2, .services-main h2, .room-section h2, .gallery-info h2, h2.type, .contact h2 {
+        font-size: 2.2em;
+    }
+    .features h3, .popular-grid h3, .popular-grid1 h3, .touch-section h3, .why-choose h3, .ourteam h3, .whatweoffer h3, .packages-section h3 {
+        font-size: 2.2em;
+    }
+    .welcome-grid {
+        width: 100%;
+    }
+    .welcome-grid:nth-child(2) {
+        margin: 1em 0;
+    }
+    .nbs-flexisel-nav-left, .nbs-flexisel-nav-right {
+        margin-top: 7.5em;
+    }
+    .popular-grid {
+        width: 100%;
+    }
+    .popular-grid1 {
+        width: 100%;
+        margin-top: 1em;
+    }
+    .popular-grid1 h4 a {
+        font-size: 0.75em;
+    }
+    .head-top {
+        background-size: cover;
+        background: url(../images/hotelfront.jpg) no-repeat 0px 0px;
+    }
+    .about-section h5 {
+        font-size: 0.9em;
+        line-height: 1.58em;
+    }
+    .choose-grid {
+        width: 100%;
+    }
+    .choose-grid:nth-child(2) {
+        margin: 1em 0;
+    }
+    .services-grid {
+        padding: 0px;
+    }
+    .room-grid {
+        width: 100%;
+    }
+    .room-grid1 {
+        width: 100%;
+    margin-top: 1em;
+    }
+    .google-map iframe {
+        min-height: 250px;
+    }
+    .contact-left {
+        width: 100%;
+    }
+    .contact-right {
+        width: 100%;
+    margin-top: 1em;
+    }
+    .contact-right input[type="text"], .contact-right textarea {
+        padding: 4px 10px;
+    }
+    .contact-right input[type="submit"] {
+        font-size: 0.9em;
+        width: 20%;
+    }
+}
+@media (max-width:320px){
+    .header-top {
+        padding: 0;
+    }
+    .nav > li > a {
+        padding: 6px 10px;
+    }
+    .header {
+        background: url(../images/hotelfront.jpg) no-repeat -200px 0px;
+        background-size: cover;
+            min-height: 260px;
+    }
+    .welcome-grid {
+        padding: 0;
+    }
+    .feature-grid {
+        padding: 0;
+    }
+    .Welcome-section, .features, .touch-section, .about-section, .ourteam, .whatweoffer, .services, .packages-section, .room-section, .gallery-top, .typography, .contact, .why-choose, .most-popular {
+        padding: 1em 0;
+    }
+    .Welcome-grids, .features-grids, .touch-grids, .choose-grids, .team-grids, .offer-grids, .packages-grids, .gallery-grids-top, .google-map,.room-grids {
+        margin-top: 1em;
+    }
+    .Welcome-section h2, .about-section h2, .services-main h2, .room-section h2, .gallery-info h2, h2.type, .contact h2 {
+        font-size: 2em;
+    }
+    .features h3, .popular-grid h3, .popular-grid1 h3, .touch-section h3, .why-choose h3, .ourteam h3, .whatweoffer h3, .packages-section h3 {
+        font-size: 2em;
+    }
+    .feature-grid {
+        width: 100%;
+    }
+    .feature-grid:nth-child(2) {
+        margin-top: 1em;
+    }
+    .nbs-flexisel-nav-left, .nbs-flexisel-nav-right {
+        margin-top: 5.5em;
+    }
+    .popular-grid {
+        padding: 0;
+    }
+    .popular-grid1 {
+        padding: 0;
+    }
+    .popular-grid ul {
+        margin-top: 1em;
+    }
+    .footer-section {
+        padding: 1em 0;
+    }
+    .head-top {
+        background-size: cover;
+        background: url(../images/hotelfront.jpg) no-repeat 0px 0px;
+            min-height: 100px !important;
+    }
+    .team-grid {
+        width: 100%;
+        padding:0;
+    }
+    .choose-grid {
+        padding: 0;
+    }
+    .team-grid:nth-child(2) {
+        margin-top: 1em;
+    }
+    .offer-grid {
+        padding: 0;
+    }
+    .offer-grid1 {
+        padding: 0;
+    }
+    .serv-img {
+        width: 100%;
+        padding: 0;
+    }
+    .serv-text {
+        width: 100%;
+        margin-top: 1em;
+        padding: 0;
+    }
+    .room-grid1 {
+        padding: 0;
+    }
+    .room-grid {
+        padding: 0;
+    }
+    .gallery-grid {
+        float: none;
+        width: 100%;
+        margin-bottom: 1em;
+        padding: 0;
+    }
+    .contact-left {
+        padding: 0;
+    }
+    .contact-right {
+        padding: 0;
+    }
+    .contact-right input[type="submit"] {
+        font-size: 0.9em;
+        width: 24%;
+    }
+}
+/** -------------finresponsive------------------**/
 

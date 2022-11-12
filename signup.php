@@ -1,8 +1,11 @@
 <?php 
-session_start();
-error_reporting(0);
+session_start();      //demarrage du session d'un utilisateur admin/clinet 
+error_reporting(0);   //Désactiver tous les rapports d'erreurs
+
+//  apper le fichier  includephp/connectiondb.php
 include('includephp/connectionbd.php');
-if(isset($_POST['submit']))
+
+if(isset($_POST['submit']))		 	//Inserée un nouelle utilisateur email at pwd dans le basse de données
 {
     $fname=$_POST['fname'];
     $mobno=$_POST['mobno'];
@@ -16,7 +19,7 @@ if(isset($_POST['submit']))
 
 	if($query -> rowCount() == 0)
 	{
-	$sql="Insert Into tbluser(FullName,MobileNumber,Email,Password)Values(:fname,:mobno,:email,:password)";
+	$sql="Insert Into user(FullName,MobileNumber,Email,Password)Values(:fname,:mobno,:email,:password)";
 	$query = $dbh->prepare($sql);
 	$query->bindParam(':fname',$fname,PDO::PARAM_STR);
 	$query->bindParam(':email',$email,PDO::PARAM_STR);
@@ -42,9 +45,9 @@ if(isset($_POST['submit']))
 <!DOCTYPE HTML>
 <html>
 	<head>
-	<title>Hotel Booking Management System | Hotel :: Sign Up</title>
+	<title>Hotel ANAN - Systéme de réservation | Hotel :: Sign Up</title>
 	
-	<!-- -------------------------appel FONT RANCHO------------------------------ -->
+	<!-- -------------------------appel POLICE RANCHO------------------------------ -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet">
@@ -68,23 +71,22 @@ if(isset($_POST['submit']))
 		<div class="content">
 			<div class="contact">
 				<div class="container">
-					<h2>REGISTERED With Us</h2>
-						<div class="contact-grids">
-							<div class="col-md-6 contact-right">
-								<form method="post">
-									<h5>Nom complet</h5>
-									<input type="text" value="" name="fname" required="true" class="form-control">
-									<h5>Numéro de mobile</h5>
-									<input type="text" name="mobno" class="form-control" required="true" maxlength="10" pattern="[0-9]+">
-									<h5>l'Address Email</h5>
-									<input type="email" class="form-control" value="" name="email" required="true">
-									<h5>Mot de posix_get_last_error</h5>
-									<input type="password" value="" class="form-control" name="password" required="true"><br />
-									<a href="signin.php" style="color: red">Signin</a><br/>
-									<input type="submit" value="Sign Up" name="submit">
-								</form>
-							</div>
-						<div class="clearfix"></div>
+					<h2>Inscrivez-vous avec nous</h2>
+					<div class="contact-grids">
+						<div class="col-md-6 contact-right">
+							<form method="post">
+								<h5>Nom complet</h5>
+								<input type="text" value="" name="fname" required="true" class="form-control">
+								<h5>Numéro de mobile</h5>
+								<input type="text" name="mobno" class="form-control" required="true" maxlength="10" pattern="[0-9]+">
+								<h5>l'Address Email</h5>
+								<input type="email" class="form-control" value="" name="email" required="true">
+								<h5>Mot de passe</h5>
+								<input type="password" value="" class="form-control" name="password" required="true"><br />
+								<a href="signin.php" style="color: red">Se connecter</a><br/>
+								<input type="submit" value="Sign Up" name="submit">
+							</form>
+						</div>
 					</div>
 				</div>
 			</div>

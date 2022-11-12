@@ -21,10 +21,10 @@ input[type="button"]{
 	-ms-transition:0.5s all;
 }
 
-.nav-item .nav-link{
+.nav-item .nav-link .dropdown-item{
     color: #000;
     font-family: 'Rancho', cursive;
-    font-size: 1.2em;
+    font-size: 1.8em;
 }
 
 .header-top {

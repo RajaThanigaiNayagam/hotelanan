@@ -28,8 +28,6 @@ input[type="button"]{
 }
 
 .header-top {
-    background-color: #bae2b1;
-    font-family: 'Kolker Brush', cursive;
     margin-top: 1em;
 }
 .navbar-brand {
@@ -54,17 +52,17 @@ input[type="button"]{
 .navbar-brand h1 a {
     text-decoration: none;
 	color:#4a7940;
-	font-size: 1em;
+	font-size: 1.5em;
     font-family: 'Kolker Brush', cursive;
     text-transform: capitalize;
     letter-spacing: 2px;
-	line-height: 0px;
+	line-height: .5px;
 
 }
 .navbar-default .navbar-nav > li > a {
     color: #fff;
     font-family: 'Kolker Brush', cursive;
-    font-size: 1.2em;
+    font-size: 1.4em;
 }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
     color: #fff;
@@ -77,7 +75,7 @@ input[type="button"]{
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
     color: #fff;
     text-decoration: none;
-    background-color: #bae2b1;
+    background-color: #5ab645;
 }
 .navbar {
     position: relative;
@@ -99,7 +97,7 @@ input[type="button"]{
 .dropdown-menu > li > a {
     display: block;
     padding: 10px 20px;
-	color: #fff;
+	color: #000;
     font-family: 'Kolker Brush', cursive;
 	font-size: 1.2em;
 }
@@ -136,7 +134,7 @@ input[type="button"]{
 .footer-section{
 	padding:2em 0;
 	text-align:center;
-	background: #fff
+	background: #5ab645
 }
 .footer-top p {
 	font-size: 1.2em;

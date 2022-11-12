@@ -14,11 +14,15 @@ $result=$query1->fetchAll(PDO::FETCH_OBJ);
 <head>
 </head>
     <body>
-        <div class="header">
-            Nom de l'Administrateur est  -  <?php echo htmlentities($result->AdminName)
+        <div>
+            <?php
+            $ret="SELECT * from admin";
+            $query1 = $dbh -> prepare($ret);
+            $query1->execute();
+            $result=$query1->fetchAll(PDO::FETCH_OBJ);?>
             foreach($result as $rows)
             {               ?>
-                <li><a class="dropdown-item" href="category-details.php?catid=<?php echo htmlentities($rows->ID)?>"><?php echo htmlentities($rows->CategoryName)?></a></li>
+                <div><a class="dropdown-item" href="category-details.php?catid=<?php echo htmlentities($rows->ID)?>"></a><?php echo le num de mobile est - htmlentities($rows->MobileNumber)br> Nom de l'Administrateur est  -  <?php echo htmlentities($rows->AdminName) ?></div>
             <?php } ?>
         </div>
     </body>

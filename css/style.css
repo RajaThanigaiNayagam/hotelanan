@@ -6,7 +6,7 @@ body{
     font-family: 'Open Sans', sans-serif;
 }
 .nav-item .nav-link{
-    color: #4a7940;
+    color: #fff;
     font-family: 'Rancho', cursive;
     font-size: 2.4em;
 }
@@ -37,7 +37,7 @@ body{
 }
 .navbar-brand h1 a {
     text-decoration: none;
-	color:#4a7940;
+	color:#fff;
 	font-size: 1.5em;
     font-family: 'Kolker Brush', cursive;
     text-transform: capitalize;
@@ -46,20 +46,20 @@ body{
 
 }
 .navbar-default .navbar-nav > li > a {
-    color: #4a7940;
+    color: #fff;
     font-family: 'Kolker Brush', cursive;
     font-size: 24.4em;
 }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-    color: #4a7940;
+    color: #fff;
     background-color: rgba(249, 255, 247, 0.43);
 }
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-    color: #4a7940;
+    color: #fff;
     background-color: rgba(249, 255, 247, 0.43);
 }
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
-    color: #4a7940;
+    color: #fff;
     text-decoration: none;
     background-color: #bae2b1;
 }
@@ -76,14 +76,14 @@ body{
     font-size: 18px;
     line-height: 20px;
 }
-.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-    color: #4a7940;
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-brand h1 a:hover, .nav-link:hover, .navbar-default .navbar-nav > .open > a:focus {
+    color: #fff;
     background-color: rgba(249, 255, 247, 0.43);
 }
 .dropdown-menu > li > a {
     display: block;
     padding: 10px 20px;
-	color: #4a7940;
+	color: #fff;
     font-family: 'Kolker Brush', cursive;
 	font-size: 2.2em;
 }
@@ -120,7 +120,7 @@ body{
 .footer-section{
 	padding:2em 0;
 	text-align:center;
-	background: #5ab645
+	background: #fff
 }
 .footer-top p {
 	font-size: 0.9em;

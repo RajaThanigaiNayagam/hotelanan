@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg" id="navbar">
     <div class="navbar-brand">
-        <h1><a href="index.php">Hotel    ANAN</a></h1>
+        <h1><a href="index.php">Hotel ANAN</a></h1>
     </div>
 
 

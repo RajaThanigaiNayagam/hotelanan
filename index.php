@@ -23,7 +23,7 @@ $result=$query1->fetchAll(PDO::FETCH_OBJ);
             <?php
             foreach($result as $rows)
             {               ?>
-                <div><a class="dropdown-item" href="category-details.php?catid=<?php echo htmlentities($rows->ID)?>"></a><?php echo le num de mobile est - htmlentities($rows->MobileNumber)br> Nom de l'Administrateur est  -  <?php echo htmlentities($rows->AdminName) ?></div>
+                <div><a class="dropdown-item" href="category-details.php?catid=<?php echo htmlentities($rows->ID)?>"></a>le num de mobile est - <?php echo htmlentities($rows->MobileNumber)<br> Nom de l Administrateur est  -  <?php echo htmlentities($rows->AdminName) ?></div>
             <?php } ?>
         </div>
     </body>

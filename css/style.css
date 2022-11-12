@@ -39,6 +39,9 @@ input[type="button"]{
 }
 .navbar {
     border-radius: 0px;
+	position: sticky;
+}
+	
 }
 .navbar-nav {
     float: right;

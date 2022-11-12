@@ -53,7 +53,7 @@
 	<div class="content">
 		<div class="contact">
 			<div class="container">
-				<h2>If you have an account with us, please log in.</h2>
+				<h2>Si vous avez un compte avec nous se connectez S.V.P.</h2>
 				<div class="contact-grids">
 					<div class="col-md-6 contact-right">
 						<form method="post">
@@ -62,7 +62,7 @@
 							<h5>Password</h5>
 							<input type="password" value="" class="form-control" name="password" required="true">
 							<br />
-							<a href="forgot-password.php">Forgot your password?</a>
+							<a href="forgot-password.php">Mot de passe oublié?</a>
 							<br/>
 							<input type="submit" value="Login" name="login">
 						</form>

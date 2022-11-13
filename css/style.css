@@ -183,6 +183,7 @@ input[type="button"]{
 	color: #777;
 	font-size: 1em;
 	line-height: 1.8em;
+    font-family: 'Rancho-Regular';
 }
 .contact-left p a {
     text-decoration: none;
@@ -197,6 +198,7 @@ address {
 	font-weight: 400;
 	padding: 10px 0;
 	color: #222;
+    font-family: 'Rancho-Regular';
 	
 }
 .contact-right input[type="text"] {
@@ -436,7 +438,7 @@ address {
     .navbar-default .navbar-collapse, .navbar-default .navbar-form {
         border-color: #652840;
     }
-    .navbar-toggler{
+    .navbar-toggler-icon{
         border-color: red;
         color: red;
         background-color: #fff;

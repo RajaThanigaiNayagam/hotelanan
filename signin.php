@@ -31,7 +31,10 @@
 <html>
 <head>
 	<title>Hotel ANAN - Systéme de réservation | Hotel :: Login Page</title>
-	<!-- -------------------------appel POLICE RANCHO------------------------------ -->
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script><!-- -------------------------appel POLICE RANCHO------------------------------ -->
+	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+	
 	<link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet">
@@ -53,7 +56,7 @@
 	<div class="content">
 		<div class="contact">
 			<div class="container">
-				<h2>Si vous avez un compte avec nous se connectez S.V.P.</h2>
+				<h2>Si vous avez un compte avec nous se connectez S.V.P</h2>
 				<div class="contact-grids">
 					<div class="col-md-6 contact-right">
 						<form method="post">

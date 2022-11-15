@@ -29,7 +29,7 @@
                     <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Rooms</span></a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <?php
-                                $ret="SELECT * from category";
+                                $ret="SELECT * from roomcategory";
                                 $query1 = $dbh -> prepare($ret);
                                 $query1->execute();
                                 $resultss=$query1->fetchAll(PDO::FETCH_OBJ);

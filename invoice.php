@@ -28,7 +28,7 @@ if (strlen($_SESSION['hbmsuid']==0)) {
         </head>
         <body>
             <!--header-->
-            <div class="header">
+            <div class="header  head-top">
               <div class="container">
                 <?php include_once('includephp/header.php');?>
               </div>

@@ -2,7 +2,7 @@
 body{
 	padding:0 0;
 	margin:0 0;
-    font-family: 'Rancho', cursive;
+     font-family: 'Rancho', cursive;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -22,7 +22,7 @@ input[type="button"]{
 	-ms-transition:0.5s all;
 }
 
-.nav-item .nav-link, .dropdown-menu .dropdown-item {
+.nav-item .nav-link, .dropdown-menu .dropdown-item{
     color: #4a7940;
     font-family: 'Rancho', cursive;
     font-size: 1.2em;
@@ -42,7 +42,7 @@ input[type="button"]{
 #navbar{
     position: sticky;
     top: 0;
-    background: white;
+    background: black;
     z-index: 10;
 }
 
@@ -62,7 +62,7 @@ input[type="button"]{
     display: inline-block;
     margin: 0.8em 1em;
 }
-.navbar-brand h1 h3 a {
+.navbar-brand h1 a, .navbar-brand h2 a, .navbar-brand h3 a, .navbar-brand h4 a, .navbar-brand h5 a {
     text-decoration: none;
 	color:#4a7940;
 	font-size: 1.5em;
@@ -166,6 +166,7 @@ input[type="button"]{
 	margin: 0 0.3em
 }
 /** ------------------------Footer section------------------------- */
+
 
 
 /** ------------------------about section------------------------- */
@@ -571,7 +572,6 @@ h2.typoh2{
 	color: #777;
 	font-size: 1em;
 	line-height: 1.8em;
-    font-family: 'Rancho-Regular';
 }
 .contact-left p a {
     text-decoration: none;
@@ -586,7 +586,6 @@ address {
 	font-weight: 400;
 	padding: 10px 0;
 	color: #222;
-    font-family: 'Rancho-Regular';
 	
 }
 .contact-right input[type="text"] {
@@ -623,8 +622,246 @@ address {
 /*** -----------------fin du page de contact --------------------- ***/
 
 
+/*** ------------- du page de facture  - typography -------------- ***/
+.typography-info {
+    text-align: center;
+    margin-bottom: 3em;
+}
+h2.type {
+    font-size: 3.5em;
+    text-transform: capitalize;
+    font-family: 'Rancho', cursive;
+    color: #222;
+}
+.typography {
+    padding: 4em 0;
+}
+.show-grid [class^=col-] {
+	background: #fff;
+	text-align: center;
+	margin-bottom: 10px;
+	line-height: 2em;
+	border: 10px solid #f0f0f0;
+}
+.show-grid [class*="col-"]:hover {
+  background: #e0e0e0;
+}
+.grid_3{
+	margin-bottom:2em;
+}
+.xs h3, h3.m_1{
+	color:#000;
+	font-size:1.7em;
+	font-weight:300;
+	margin-bottom: 1em;
+}
+.grid_3 p{
+  color: #999;
+  font-size: 0.85em;
+  margin-bottom: 1em;
+  font-weight: 300;
+}
+.grid_4{
+	background:none;
+	margin-top:50px;
+}
+.label {
+  font-weight: 300 !important;
+  border-radius:4px;
+  -webkit-border-radius:4px;
+	-moz-border-radius:4px;
+}  
+.grid_5{
+	background:none;
+	padding:2em 0;
+}
+.grid_5 h3, .grid_5 h2, .grid_5 h1, .grid_5 h4, .grid_5 h5, h3.hdg {
+    margin-bottom: 1em;
+    color: #222;
+}
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+  border-top: none !important;
+}
+.tab-content > .active {
+  display: block;
+  visibility: visible;
+}
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+  z-index: 0;
+}
+.badge-primary {
+  background-color: #03a9f4;
+}
+.badge-success {
+  background-color: #8bc34a;
+}
+.badge-warning {
+  background-color: #ffc107;
+}
+.badge-danger {
+  background-color: #e51c23;
+}
+.grid_3 p{
+  line-height: 2em;
+  color: #888;
+  font-size: 0.9em;
+  margin-bottom: 1em;
+  font-weight: 300;
+}
+.bs-docs-example {
+  margin: 1em 0;
+}
+section#tables  p {
+ margin-top: 1em;
+}
+.tab-container .tab-content {
+  border-radius: 0 2px 2px 2px;
+  border: 1px solid #e0e0e0;
+  padding: 16px;
+  background-color: #ffffff;
+}
+.table td, .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+  padding: 15px!important;
+}
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+  font-size: 0.9em;
+  color: #999;
+  border-top: none !important;
+}
+.tab-content > .active {
+  display: block;
+  visibility: visible;
+}
+.label {
+  font-weight: 300 !important;
+}
+.label {
+  padding: 4px 6px;
+  border: none;
+  text-shadow: none;
+}
+.nav-tabs {
+  margin-bottom: 1em;
+}
+.alert {
+  font-size: 0.85em;
+}
+h1.t-button,h2.t-button,h3.t-button,h4.t-button,h5.t-button {
+	line-height:1.8em;
+  margin-top:0.5em;
+  margin-bottom: 0.5em;
+}
+li.list-group-item1 {
+  line-height: 2.5em;
+}
+.input-group {
+  margin-bottom: 20px;
+  }
+.in-gp-tl{
+	padding:0;
+}
+.in-gp-tb{
+	padding-right:0;
+}
+.list-group {
+  margin-bottom: 48px;
+}
+ol {
+  margin-bottom: 44px;
+}
+h2.typoh2{
+    margin: 0 0 10px;
+}
+@media (max-width:768px){
+	.grid_5 {
+		padding: 0 0 1em;
+	}
+	.grid_3 {
+		margin-bottom: 0em;
+	}
+}
+@media (max-width:640px){
+	h1, .h1, h2, .h2, h3, .h3 {
+		margin-top: 0px;
+		margin-bottom: 0px;
+	}
+	.grid_5 h3, .grid_5 h2, .grid_5 h1, .grid_5 h4, .grid_5 h5, h3.hdg, h3.bars {
+		margin-bottom: .5em;
+	}
+	.progress {
+		height: 10px;
+		margin-bottom: 10px;
+	}
+	ol.breadcrumb li,.grid_3 p,ul.list-group li,li.list-group-item1 {
+		font-size: 14px;
+	}
+	.breadcrumb {
+		margin-bottom: 10px;
+	}
+	.well {
+		font-size: 14px;
+		margin-bottom: 10px;
+	}
+	h2.typoh2 {
+		font-size: 1.5em;
+	}
+}
+@media (max-width:480px){
+	.table h1 {
+		font-size: 26px;
+	}
+	.table h2 {
+		font-size: 23px;
+	}
+	.table h3 {
+		font-size: 20px;
+	}
+	.label {
+		font-size: 53%;
+	}
+	.alert,p {
+		font-size: 14px;
+	}
+	.pagination {
+		margin: 20px 0 0px;
+	}
+}
+@media (max-width: 320px){
+	.grid_4 {
+		margin-top: 18px;
+	}
+	h3.title {
+		font-size: 1.6em;
+	}
+	.alert, p,ol.breadcrumb li, .grid_3 p,.well, ul.list-group li, li.list-group-item1,a.list-group-item {
+		font-size: 13px;
+	}
+	.alert {
+		padding: 10px;
+		margin-bottom: 10px;
+	}
+	ul.pagination li a {
+		font-size: 14px;
+		padding: 5px 11px;
+	}
+	.list-group {
+		margin-bottom: 10px;
+	}
+	.well {
+		padding: 10px;
+	}
+	.nav > li > a {
+		font-size: 14px;
+	}
+	table.table.table-striped,.table-bordered,.bs-docs-example {
+		display: none;
+	}
+}
+/*** ------------- du page de facture  - typography -------------- ***/
 
 /** -----------------responsive------------------**/
+
+
 @media (max-width:1440px){
     .header {
         min-height: 679px;
@@ -815,13 +1052,13 @@ address {
         color: red;
         background-color: #fff;
     }
-    .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+    .navbar-default .navbar-toggler-icon:hover, .navbar-default .navbar-toggler-icon:focus {
         background-color: #5ab645;
     }
-    .navbar-default .navbar-toggle {
+    .navbar-default .navbar-toggler-icon {
         border-color: #5ab645;
     }
-    .navbar-default .navbar-toggle .icon-bar .sr-only {
+    .navbar-default .navbar-toggler-icon .icon-bar .sr-only {
         background-color: #fff;
     }
     .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
@@ -831,7 +1068,7 @@ address {
     .navbar-default .navbar-nav .open .dropdown-menu > li > a {
         color: #fff;
     }
-    .navbar-toggle {
+    .navbar-toggler-icon {
         background-color: #5ab645;
     }
     .header-top {

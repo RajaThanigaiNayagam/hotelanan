@@ -40,8 +40,8 @@ include('includephp/connectionbd.php');
 					<div class="room-grids">
 						<?php
 							$cid=intval($_GET['catid']);
-							$sql="SELECT room.*,room.id as rmid , category.Price,category.ID,category.CategoryName from room 
-							join category on room.RoomType=category.ID 
+							$sql="SELECT room.*,room.id as rmid , roomcategory.Price,roomcategory.ID,roomcategory.CategoryName from room 
+							join roomcategory on room.RoomType=roomcategory.ID 
 							where room.RoomType=:cid";
 							$query = $dbh -> prepare($sql);
 							$query-> bindParam(':cid', $cid, PDO::PARAM_STR);

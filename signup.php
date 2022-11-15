@@ -19,26 +19,26 @@ if(isset($_POST['submit']))		 	//Inserée un nouelle utilisateur email at pwd da
 
 	if($query -> rowCount() == 0)
 	{
-	$sql="Insert Into user(FullName,MobileNumber,Email,Password)Values(:fname,:mobno,:email,:password)";
-	$query = $dbh->prepare($sql);
-	$query->bindParam(':fname',$fname,PDO::PARAM_STR);
-	$query->bindParam(':email',$email,PDO::PARAM_STR);
-	$query->bindParam(':mobno',$mobno,PDO::PARAM_INT);
-	$query->bindParam(':password',$password,PDO::PARAM_STR);
-	$query->execute();
-	$lastInsertId = $dbh->lastInsertId();
-	if($lastInsertId)
-	{
-		echo "<script>alert('You have successfully registered with us');</script>";
+		$sql="Insert Into user(FullName,MobileNumber,Email,Password)Values(:fname,:mobno,:email,:password)";
+		$query = $dbh->prepare($sql);
+		$query->bindParam(':fname',$fname,PDO::PARAM_STR);
+		$query->bindParam(':email',$email,PDO::PARAM_STR);
+		$query->bindParam(':mobno',$mobno,PDO::PARAM_INT);
+		$query->bindParam(':password',$password,PDO::PARAM_STR);
+		$query->execute();
+		$lastInsertId = $dbh->lastInsertId();
+		if($lastInsertId)
+		{
+			echo "<script>alert('Vous vous êtes inscrit avec succès chez nous');</script>";
+		}
+		else
+		{
+			echo "<script>alert('Une erreur s\'est produite. Veuillez réessayer');</script>";
+		}
 	}
 	else
 	{
-		echo "<script>alert('Something went wrong.Please try again');</script>";
-	}
-	}
-	else
-	{
-		echo "<script>alert('Email-id already exist. Please try again');</script>";
+		echo "<script>alert('L\'Email existe déjà. Veuillez réessayer');</script>";
 	}
 }
 ?>
@@ -46,7 +46,11 @@ if(isset($_POST['submit']))		 	//Inserée un nouelle utilisateur email at pwd da
 <html>
 	<head>
 	<title>Hotel ANAN - Systéme de réservation | Hotel :: Sign Up</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script><!-- -------------------------appel POLICE RANCHO------------------------------ -->
+	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+			
 	<!-- -------------------------appel POLICE RANCHO------------------------------ -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -92,5 +96,7 @@ if(isset($_POST['submit']))		 	//Inserée un nouelle utilisateur email at pwd da
 			</div>
 		</div>
 		<?php include_once('includephp/footer.php');?>
+		<!--JavaScript Bundle with Popper -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 	</body>
 </html>

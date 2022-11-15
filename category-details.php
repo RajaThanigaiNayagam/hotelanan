@@ -10,9 +10,11 @@ include('includephp/connectionbd.php');
 <html>
 	<head>
 		<title>Hotel ANAN - Systéme de réservation  | Hotel :: Détails de la chambre </title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script><!-- -------------------------appel POLICE RANCHO------------------------------ -->
 		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-	
+			
 		<!-- -------------------------appel POLICE RANCHO------------------------------ -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,7 +26,7 @@ include('includephp/connectionbd.php');
 	</head>
 	<body>
 		<!--header-->
-		<div class="header head-top">
+		<div class="header">
 			<div class="container">
 				<?php include_once('includephp/header.php');?>
 			</div>
@@ -80,5 +82,7 @@ include('includephp/connectionbd.php');
 		</div>
 		<!--footer-->
 		<?php include_once('includephp/footer.php');?>
+		<!--JavaScript Bundle with Popper -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 	</body>
 </html>

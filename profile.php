@@ -62,7 +62,7 @@ if (strlen($_SESSION['hotelanan']==0)) {
 							<div class="col-md-6 contact-right">
 								<form method="post">
 									<?php
-										$uid=$_SESSION['hbmsuid'];
+										$uid=$_SESSION['hotelanan'];
 										$sql="SELECT * from  user where ID=:uid";
 										$query = $dbh -> prepare($sql);
 										$query->bindParam(':uid',$uid,PDO::PARAM_STR);

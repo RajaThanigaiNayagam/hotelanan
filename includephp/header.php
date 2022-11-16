@@ -56,9 +56,9 @@
                         <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown2" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="profile.php">Profile</a></li>
-                            <li><a class="dropdown-item" href="my-booking.php">My Booking</a></li>
-                            <li><a class="dropdown-item" href="change-password.php">Change Password</a></li>
-                            <li><a class="dropdown-item" href="logout.php">Logout</a></li>
+                            <li><a class="dropdown-item" href="my-booking.php">Mes reservation</a></li>
+                            <li><a class="dropdown-item" href="change-password.php">Changer le mot de passe</a></li>
+                            <li><a class="dropdown-item" href="logout.php">Se déconnecter</a></li>
                         </ul>
                     </li><?php 
                 } ?>

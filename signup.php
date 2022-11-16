@@ -11,7 +11,7 @@ if(isset($_POST['submit']))		 	//Inserée un nouelle utilisateur email at pwd da
     $mobno=$_POST['mobno'];
     $email=$_POST['email'];
     $password=md5($_POST['password']);
-    $ret="select Email from tbluser where Email=:email";
+    $ret="select Email from user where Email=:email";
     $query= $dbh -> prepare($ret);
     $query-> bindParam(':email', $email, PDO::PARAM_STR);
     $query-> execute();
@@ -88,7 +88,7 @@ if(isset($_POST['submit']))		 	//Inserée un nouelle utilisateur email at pwd da
 								<h5>Mot de passe</h5>
 								<input type="password" value="" class="form-control" name="password" required="true"><br />
 								<a href="signin.php" style="color: red">Se connecter</a><br/>
-								<input type="submit" value="Sign Up" name="submit">
+								<input type="submit" value="Connexion" name="submit">
 							</form>
 						</div>
 					</div>

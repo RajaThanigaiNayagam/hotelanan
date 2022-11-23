@@ -51,14 +51,11 @@ if (strlen($_SESSION['hotelanan']==0)) {
 		<!--header-->
 			<!--about-->
 			
-				<div class="content">
-					<div class="contact">
+			<div class="content">
+				<div class="contact">
 					<div class="container">
-						
-						<h2>View Your Profile !!!!!!</h2>
-						
-					<div class="contact-grids">
-						
+						<h2>Afficher votre profil !!!</h2>
+						<div class="contact-grids">
 							<div class="col-md-6 contact-right">
 								<form method="post">
 									<?php
@@ -74,18 +71,18 @@ if (strlen($_SESSION['hotelanan']==0)) {
 											foreach($results as $row)
 											{               
 												?>
-												<h5>Full Name</h5>
+												<h5>Nom et prénom</h5>
 												<input type="text" value="<?php  echo $row->FullName;?>" name="fname" required="true" class="form-control">
-												<h5>Mobile Number</h5>
+												<h5>Numéro de portable</h5>
 												<input type="text" name="mobno" class="form-control" required="true" maxlength="10" pattern="[0-9]+" value="<?php  echo $row->MobileNumber;?>">
-												<h5>Email Address</h5>
+												<h5>Adresse e-mail</h5>
 												<input type="email" class="form-control" value="<?php  echo $row->Email;?>" name="email" required="true" readonly='true'>
-												<h5>Registration Date</h5>
+												<h5>Date d'inscription</h5>
 												<input type="text" value="<?php  echo $row->RegDate;?>" class="form-control" name="password" readonly="true">
 												<br /><?php $cnt=$cnt+1;
 											}
 										} ?><br/>
-										<input type="submit" value="Update" name="submit">
+										<input type="submit" value="Mise à jour" name="submit">
 								</form>
 							</div>
 							<div class="col-md-6 contact-right">

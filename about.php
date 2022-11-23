@@ -30,7 +30,7 @@ include('includephp/connectionbd.php');
 				<?php include_once('includephp/header.php');?>
 			</div>
 		</div>
-<!--header-->
+		<!--header-->
 		<!--about-->
 		<div class="content">
 			<div class="about-section">

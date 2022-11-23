@@ -146,7 +146,7 @@ input[type="button"]{
 .footer-section{
 	padding:2em 0;
 	text-align:center;
-	background: #5ab645
+	background: #5ab645;
 }
 .footer-top p {
 	font-size: 1.2em;
@@ -169,6 +169,18 @@ input[type="button"]{
 
 
 
+/** ----------- /affiche tous les titre gros et gras ------------- */
+.content > .contact > .container h2, .typography > .container > p, .typography > .container > .typography-info h2 {
+	font-size: 3.5em;
+    text-transform: capitalize;
+    font-family: 'Rancho', cursive;
+    color: #222;
+    margin-bottom: 0.5em;
+}
+/** ----------- /affiche tous les titre gros et gras ------------- */
+
+
+
 /** ------------------------about section------------------------- */
 .head-top {
     min-height: 115px !important;
@@ -178,12 +190,9 @@ padding:4em 0;
 text-align:center;
 }
 .about-section h2 {
-	    font-size: 3.5em;
+	font-size: 3.5em;
     text-transform: capitalize;
-    
-    
     font-family: 'Rancho', cursive;
-
     color: #222;
     margin-bottom: 0.5em;
 }

@@ -79,11 +79,15 @@
 													<td><?php  echo htmlentities($row->Email);?></td>
 													<?php if($row->Status=="")
 													{ ?>
-														<td><?php echo "Still Pending"; ?></td>
+														<td><?php echo "Toujours en attente"; ?></td>
 													<?php } else { ?> 
 									                 	<td><?php  echo htmlentities($row->Status);?></td>
 													<?php } ?>
-													<td><a href="view-application-detail.php?viewid=<?php echo htmlentities ($row->bid);?>" class="btn btn-danger">View</a></td>
+													<?php if($row->Status=="approuvée") { ?>
+														<td><a href="view-application-detail.php?viewid=<?php echo htmlentities ($row->bid);?>" class="btn btn-danger">Voir les détails</a></td>
+													<?php } else { ?> 
+									                 	<td><?php  echo "Toujours en attente";?></td>
+													<?php } ?>
 												</tr>
 												<?php $cnt=$cnt+1;
 											}

@@ -30,7 +30,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>Hotel ANAN - Systéme de réservation | Hotel :: Login Page</title>
+	<title>Hotel ANAN - Systéme de réservation | Hotel :: Page de connection</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script><!-- -------------------------appel POLICE RANCHO------------------------------ -->
@@ -61,14 +61,14 @@
 				<div class="contact-grids">
 					<div class="col-md-6 contact-right">
 						<form method="post">
-							<h5>Email Address</h5>
+							<h5>Adresse e-mail</h5>
 							<input type="email" class="form-control" value="" name="email" required="true">
-							<h5>Password</h5>
+							<h5>Mot de passe</h5>
 							<input type="password" value="" class="form-control" name="password" required="true">
 							<br />
 							<a href="forgot-password.php">Mot de passe oublié?</a>
 							<br/>
-							<input type="submit" value="Login" name="login">
+							<input type="submit" value="Connexion" name="login">
 						</form>
 					</div>
 					<div class="clearfix"></div>

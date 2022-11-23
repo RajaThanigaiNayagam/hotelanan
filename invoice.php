@@ -5,7 +5,7 @@ error_reporting(0);   //Désactiver tous les rapports d'erreurs
 //  apper le fichier  includephp/connectiondb.php
 include('includephp/connectionbd.php');
 
-if (strlen($_SESSION['hbmsuid']==0)) {
+if (strlen($_SESSION['hotelanan']==0)) {
       header('location:logout.php');
 } else{?>
     <!DOCTYPE HTML>
@@ -49,7 +49,7 @@ if (strlen($_SESSION['hbmsuid']==0)) {
                             join room on booking.RoomId=room.ID 
                             join roomcategory on roomcategory.ID=room.RoomType 
                             join user on booking.UserID=user.ID  
-                            where booking.ID=:invid";
+                            where booking.ID=:invid";//booking.Status='approuvée'
                             $query = $dbh -> prepare($sql);
                             $query-> bindParam(':invid', $invid, PDO::PARAM_STR);
                             $query->execute();

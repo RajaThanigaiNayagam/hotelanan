@@ -1,8 +1,7 @@
-
     <!----------------------------------------------------------->
     <!-------------barre de navigation responsive---------------->
     <!----------------------------------------------------------->
-<div class="header-top">
+    <div class="header-top">
     <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
         <div class="container-fluid">
         <div class="navbar-brand">

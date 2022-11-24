@@ -84,7 +84,7 @@ if (strlen($_SESSION['hotelanan']==0)) {
 															$query = $dbh -> prepare($sql);
 															$query->execute();
 															$results=$query->fetchAll(PDO::FETCH_OBJ);
-															$cnt=1;
+															$cnt=$offset+1;
 															if($query->rowCount() > 0)
 															{
 																foreach($results as $row)

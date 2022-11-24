@@ -58,7 +58,7 @@ include('includephp/connectionbd.php');
 									?>
 									<div class="room1">
 										<div class="col-md-5 room-grid" style="padding-bottom: 50px">
-											<a href="#" class="mask"><img src="admin/images/<?php echo $row->Image;?>" class=" mask img-responsive zoom-img" alt="" /></a>
+											<a href="#" class="mask"><img src="admin/images/<?php echo $row->Image;?>" class="img-fluid mask img-responsive zoom-img" alt="" /></a>
 										</div>
 										<div class="col-md-7 room-grid1">
 											<h4> <?php  echo htmlentities($row->FacilityTitle);?> </h4>

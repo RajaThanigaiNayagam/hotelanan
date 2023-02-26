@@ -18,11 +18,12 @@ if (strlen($_SESSION['hotelanan']==0)) {
 		$address=$_POST['address'];
 		$checkindate=$_POST['checkindate'];
 		$checkoutdate=$_POST['checkoutdate'];
+		//echo '<script>alert("test1 svp...")</script>';
 		$cdate=date('Y-m-d');
 		if($checkindate <  $cdate){
-			echo '<script>alert("Check in date must be greater than current date")</script>';
+			echo '<script>alert("La date d\'arrivée doit être supérieure à la date actuelle")</script>';
 		} else if($checkindate > $checkoutdate){
-			echo '<script>alert("Check out date must be equal to / greater than  check in date")</script>';	
+			echo '<script>alert("La date de départ doit être égale ou supérieure à la date d\'arrivée")</script>';	
 		} else {
 			$sql="insert into booking(RoomId,BookingNumber,UserID,IDType,Gender,Address,CheckinDate,CheckoutDate)values(:rid,:booknum,:uid,:idtype,:gender,:address,:checkindate,:checkoutdate)";
 			$query=$dbh->prepare($sql);
@@ -81,8 +82,8 @@ if (strlen($_SESSION['hotelanan']==0)) {
 							<div class="col-md-6 contact-right">
 								<form method="post">
 									<?php
-										$uid=$_SESSION['hbmsuid'];
-										$sql="SELECT * from  tbluser where ID=:uid";
+										$uid=$_SESSION['hotelanan'];
+										$sql="SELECT * from user where ID=:uid";
 										$query = $dbh -> prepare($sql);
 										$query->bindParam(':uid',$uid,PDO::PARAM_STR);
 										$query->execute();

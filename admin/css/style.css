@@ -1,7 +1,7 @@
 html, body{
 	font-family: 'Roboto', sans-serif;
     font-size: 100%;
-  	overflow-x: hidden;
+  	/*overflow-x: hidden;*/
 	background:#FFFFFF;
     font-family: 'Rancho', cursive;
     font-family: 'Open Sans', sans-serif;
@@ -83,9 +83,9 @@ a.sidebar-icon:hover{
   transition: all 100ms ease-in-out;
 }
 .page-container.sidebar-collapsed .sidebar-icon {
-   transform: rotate(90deg);
-   transition: all 300ms ease-in-out;
-   margin-right: 0em;
+   	transform: rotate(90deg);
+   	transition: all 300ms ease-in-out;
+	margin-right: 0em;
     margin-top: -8px;
 	color: #fff;
     background: #252525;
@@ -227,7 +227,8 @@ background-color:#00C6D7!important;
 
 .logo1 {
     width: 100%;
-    padding: 15px 14px 47px;
+    padding: 50px 14px 12px;
+    /*padding: 15px 14px 47px;*/
     box-sizing: border-box;
 	color: #0b3801;
 }
@@ -4085,9 +4086,9 @@ label.col-sm-2.control-label {
 		top: 75px;
 		left: 78px;
 	}
-	.sidebar-menu {
+	/*.sidebar-menu {
        position:absolute;
-	}
+	}*/
 	.owl-item {
 		width: 151px ! important;
 }
@@ -4193,14 +4194,14 @@ input[type="date"] {
 		transition: all 100ms ease-in-out;
 		transition-delay: 300ms;
 	}
-	.logo1 {
+	/*.logo1 {
 	    padding: 21px 0;
 		height: 63px;
 		box-sizing: border-box;
 		transition: all 100ms ease-in-out;
 		transition-delay: 300ms;
 		color: #0b3801;
-	}
+	}*/
 	span#logo1 {
 		display: none;
 	}
@@ -4301,9 +4302,9 @@ input[type="date"] {
 			top: 0px;
 			left: 12%;
 		}
-	 .sidebar-menu {
-          position:absolute;
-	  }
+	/*.sidebar-menu {
+        position:absolute;
+	}*/
 	 .page-container.sidebar-collapsed .left-content .srch button {
 		cursor: pointer;
 		background: url('../images/search.png') no-repeat 25px 15px rgba(3, 182, 197, 0.68);

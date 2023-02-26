@@ -35,7 +35,6 @@ if (strlen($_SESSION['hotelanan']==0)) {
 		$query->execute();
 		echo '<script>alert("Le détail de la chambre a été mis à jour")</script>';
 		echo "<script>window.location.href ='manage-room.php'</script>";
-
 	}?>
 	<!DOCTYPE HTML>
 	<html>
@@ -43,6 +42,7 @@ if (strlen($_SESSION['hotelanan']==0)) {
 			<title>Hotel ANAN - Systéme de réservation | Modifier les chambres</title>
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
 			
+		<!-- --------------------------- appel jquery --------------------------------- -->
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script><!-- -------------------------appel POLICE RANCHO------------------------------ -->
 			<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 		
@@ -97,7 +97,7 @@ if (strlen($_SESSION['hotelanan']==0)) {
 																<select type="text" name="roomtype" id="roomtype" value="" class="form-control" required="true">
 																	<option value="<?php  echo $row->RoomType;?>"><?php  echo $row->RoomType;?></option>
 																	<?php 
-																	$sql2 = "SELECT * from   category ";
+																	$sql2 = "SELECT * from roomcategory";
 																	$query2 = $dbh -> prepare($sql2);
 																	$query2->execute();
 																	$result2=$query2->fetchAll(PDO::FETCH_OBJ);

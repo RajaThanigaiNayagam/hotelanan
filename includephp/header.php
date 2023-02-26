@@ -19,7 +19,7 @@
         <div class="collapse navbar-collapse" id="ouvremenu">
             <ul class="navbar-nav ms-auto mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php">Maison</a>
+                    <a class="nav-link" href="index.php">Acceuil</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="about.php">A propos de</a>

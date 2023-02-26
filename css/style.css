@@ -568,15 +568,6 @@ h2.typoh2{
     color: #222;
 	text-align:center;
 }
-.google-map iframe {
-	width: 100%;
-	min-height: 400px;
-	border: none;
-	margin-bottom: 2em;
-}
-.google-map {
-  margin-top: 3em;
-}
 .contact-left p {
 	color: #777;
 	font-size: 1em;
@@ -908,9 +899,6 @@ h2.typoh2{
     .contact-right h5 {
         font-size: 0.96em;
     }
-    .google-map iframe {
-        min-height: 350px;
-    }
 }
 
 
@@ -1042,9 +1030,6 @@ h2.typoh2{
     .contact-right input[type="submit"] {
         font-size: 0.95em;
     }
-    .google-map iframe {
-        min-height: 310px;
-    }
 }
 @media (max-width:640px){
     .navbar-nav {
@@ -1119,7 +1104,7 @@ h2.typoh2{
     .welcome-grid1 {
         border: 3px solid#fff;
     }
-    .Welcome-grids,.features-grids,.touch-grids ,.choose-grids,.team-grids,.offer-grids,.packages-grids,.gallery-grids-top,.google-map,.room-grids{
+    .Welcome-grids,.features-grids,.touch-grids ,.choose-grids,.team-grids,.offer-grids,.packages-grids,.gallery-grids-top,.room-grids{
         margin-top: 2em;
     }
     .touch-grid {
@@ -1180,13 +1165,10 @@ h2.typoh2{
         font-size: 0.92em;
         width: 25%;
     }
-    .google-map iframe {
-        min-height: 280px;
-    }
 }
 @media (max-width:480px){
     .header {
-        background: url(../images/hotelfront.jpg) no-repeat -130px 0px;
+        background: url(../images/hotelfront.jpg) no-repeat 0px 0px;
         background-size: cover;
     }
     .navbar-brand h1 a {
@@ -1247,9 +1229,6 @@ h2.typoh2{
         width: 100%;
     margin-top: 1em;
     }
-    .google-map iframe {
-        min-height: 250px;
-    }
     .contact-left {
         width: 100%;
     }
@@ -1286,7 +1265,7 @@ h2.typoh2{
     .Welcome-section, .features, .touch-section, .about-section, .ourteam, .whatweoffer, .services, .packages-section, .room-section, .gallery-top, .typography, .contact, .why-choose, .most-popular {
         padding: 1em 0;
     }
-    .Welcome-grids, .features-grids, .touch-grids, .choose-grids, .team-grids, .offer-grids, .packages-grids, .gallery-grids-top, .google-map,.room-grids {
+    .Welcome-grids, .features-grids, .touch-grids, .choose-grids, .team-grids, .offer-grids, .packages-grids, .gallery-grids-top, .room-grids {
         margin-top: 1em;
     }
     .Welcome-section h2, .about-section h2, .services-main h2, .room-section h2, .gallery-info h2, h2.type, .contact h2 {

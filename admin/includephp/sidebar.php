@@ -1,9 +1,9 @@
-                    <div class="sidebar-menu">
-                        <header class="logo1">
-                          <span style="font-size:26px; font-weight:bold">Hotel ANAN</span>
-                            <!--<a href="#" class="sidebar-icon"><span class="fa fa-bars"></span> </a> -->
-                        </header>
-                        <!--<div style="border-top:1px ridge rgba(255, 255, 255, 0.15)"></div>-->
+                <div class="sidebar-menu">
+                    <header class="logo1">
+                        <span style="font-size:26px; font-weight:bold">Hotel ANAN</span>
+                        <!--<a href="#" class="sidebar-icon"><span class="fa fa-bars"></span> </a> -->
+                    </header>
+                    <!--<div style="border-top:1px ridge rgba(255, 255, 255, 0.15)"></div>-->
                     <div class="menu">
                         <ul id="menu" >
                             <li><a href="dashboard.php"><i class="fa fa-tachometer"></i> <span>Home</span></a></li>
@@ -42,8 +42,8 @@
                             <li><a href="reg-users.php"><i class="fa fa-users" aria-hidden="true"></i> <span>Utilisateurs enregistrés</span></a></li>
                             <li id="menu-" ><a href="#"><i class="fa fa-comment" aria-hidden="true"></i> <span>Message</span> <span class="fa fa-angle-right" style="float: right"></span></a>
                                 <ul id="menu--sub" >
-                                    <li id="menu-assessments" ><a href="read-enquiry.php">Message déjà lue</a></li>
-                                    <li id="menu--reportcard" ><a href="unread-enquiry.php">Message non lue</a></li>
+                                    <li id="menu-assessments" ><a href="read-enquiry.php">Message déjà lu</a></li>
+                                    <li id="menu--reportcard" ><a href="unread-enquiry.php">Message non lu</a></li>
                                 </ul>
                             </li>
                             <li id="menu-" ><a href="#"><i class="fa fa-file-text-o"></i> <span>Rechercher</span> <span class="fa fa-angle-right" style="float: right"></span></a>
@@ -52,10 +52,10 @@
                                     <li id="menu--reportcard" ><a href="search-booking.php">Resercher le réservation</a></li>
                                 </ul>
                             </li>
-                            <li id="menu-" ><a href="#"><i class="fa fa-table" aria-hidden="true"></i> <span>Rapports</span> <span class="fa fa-angle-right" style="float: right"></span></a>
+                            <li id="menu-" ><a href="#"><i class="fa fa-table" aria-hidden="true"></i> <span>Rapport de réservation</span> <span class="fa fa-angle-right" style="float: right"></span></a>
                                 <ul id="menu--sub" >
                                     <!--<li id="menu-assessments" ><a href="enquiry-betdates-reports.php">Enquiry B/W Reports</a></li>-->
-                                    <li id="menu--reportcard" ><a href="booking-betdates-reports.php">Booking B/W Reports</a></li>
+                                    <li id="menu--reportcard" ><a href="booking-betdates-reports.php">Rapport de réservation entre deux dates</a></li>
                                 </ul>
                             </li>
                         </ul>

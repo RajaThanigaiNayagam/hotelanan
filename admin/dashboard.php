@@ -24,6 +24,7 @@ if (strlen($_SESSION['hotelanan']==0)) {
 		<link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet">
 		<!--  ------------------------appel fichier style.css----------------------   -->
 		<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+		<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
 		<!-- -------------------------APPEL BOOTSTRAP-------------------------------- -->
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 			

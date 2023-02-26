@@ -21,7 +21,8 @@ if (strlen($_SESSION['hotelanan']==0)) {
 		<head>
 			<title>Hotel ANAN - Systéme de réservation | Afficher les messages</title>
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            
+           
+			<!-- --------------------------- appel jquery --------------------------------- --> 
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script><!-- -------------------------appel POLICE RANCHO------------------------------ -->
             <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
           
@@ -34,7 +35,10 @@ if (strlen($_SESSION['hotelanan']==0)) {
             <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
             <!-- -------------------------APPEL BOOTSTRAP-------------------------------- -->
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-        </head>
+        
+			<!-- Graph CSS -->
+			<link href="css/font-awesome.css" rel="stylesheet">
+		</head>
         <body>
 			<div class="page-container">
 			<!--/content-inner-->

@@ -11,7 +11,7 @@ if (strlen($_SESSION['hotelanan']==0)) {
 	<!DOCTYPE HTML>
 	<html>
 		<head>
-			<title>Hotel Booking Management System | Toutes les réservations</title>
+			<title>Hotel ANAN - Systéme de réservation | Toutes les réservations</title>
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
 			
 			<!-- --------------------------- appel jquery --------------------------------- -->

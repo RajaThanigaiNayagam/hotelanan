@@ -27,6 +27,9 @@ if (strlen($_SESSION['hotelanan']==0)) {
 			<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
 			<!-- -------------------------APPEL BOOTSTRAP-------------------------------- -->
 			<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+		
+			<!-- Graph CSS -->
+			<link href="css/font-awesome.css" rel="stylesheet">
 		</head> 
 		<body>
 			<div class="page-container">
@@ -50,6 +53,7 @@ if (strlen($_SESSION['hotelanan']==0)) {
 													<h4>Utilisateur enregistré</h4>
 												</div>
 												<div class="form-body">
+													<!--<table class="table table-bordered">-->
 													<table class="table table-bordered table-striped table-vcenter js-dataTable-full-pagination">
 														<thead>
 															<tr>

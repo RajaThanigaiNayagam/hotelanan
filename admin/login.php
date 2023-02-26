@@ -46,9 +46,11 @@ if(isset($_POST['login']))
 	<title>Hotel ANAN - Systéme de réservation | Page de connexion administrateur</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		
+		<!-- --------------------------- appel jquery --------------------------------- -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script><!-- -------------------------appel POLICE RANCHO------------------------------ -->
 		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 		
+		<!-- -------------------------appel POLICE RANCHO------------------------------ -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet">
@@ -57,6 +59,9 @@ if(isset($_POST['login']))
 		<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
 			<!-- -------------------------APPEL BOOTSTRAP-------------------------------- -->
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+	
+		<!-- Graph CSS -->
+		<link href="css/font-awesome.css" rel="stylesheet">
 	</head>
 	<body>
 		<p style="padding-top: 20px;padding-left: 20px"><a href="../index.php"><i class="fa fa-home" aria-hidden="true" style="font-size: 30px;padding-right: 10px"></i>Retour !!!</a></p>

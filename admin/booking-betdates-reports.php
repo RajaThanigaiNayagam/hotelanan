@@ -14,6 +14,7 @@ if (strlen($_SESSION['hotelanan']==0)) {
 			<title>Hotel ANAN - Systéme de réservation | Rapport de réservation entre les dates</title>
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
 			
+			<!-- --------------------------- appel jquery --------------------------------- -->
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script><!-- -------------------------appel POLICE RANCHO------------------------------ -->
 			<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 		

@@ -41,10 +41,12 @@ include('includephp/connectionbd.php');
 				<h2>Détails de la chambre</h2>
 					<div class="room-grids">
 						<?php
-							$cid=intval($_GET['catid']);
+							$cid=intval($_GET['catid']); 
 							$sql="SELECT room.*,room.id as rmid , roomcategory.Price,roomcategory.ID,roomcategory.CategoryName from room 
 							join roomcategory on room.RoomType=roomcategory.ID 
 							where room.RoomType=:cid";
+							//$sql="SELECT roomcategory.Price,roomcategory.ID,roomcategory.CategoryName from roomcategory 
+							//where roomcategory.ID=:cid";
 							$query = $dbh -> prepare($sql);
 							$query-> bindParam(':cid', $cid, PDO::PARAM_STR);
 							$query->execute();
@@ -63,15 +65,15 @@ include('includephp/connectionbd.php');
 										<div class="col-md-7 room-grid1">
 											<h4> <?php  echo htmlentities($row->FacilityTitle);?> </h4>
 											<p><?php  echo htmlentities($row->RoomDesc);?></p>
-											<p>Max Adults:<?php  echo htmlentities($row->MaxAdult);?></p>
-											<p>Max Enfants:<?php  echo htmlentities($row->MaxChild);?></p>
-											<p>N° of lits:<?php  echo htmlentities($row->NoofBed);?></p>
+											<p>Max Adultes : <?php  echo htmlentities($row->MaxAdult);?></p>
+											<p>Max Enfants : <?php  echo htmlentities($row->MaxChild);?></p>
+											<p>Lits : <?php  echo htmlentities($row->NoofBed);?></p>
 											<p>Équipements de la chambre:<?php  echo htmlentities($row->RoomFacility);?></p>
-											<p>Prix: <?php  echo htmlentities($row->Price);?></p>
-											<button class="btn btn-success"><a href="book-room.php?rmid=<?php echo $row->rmid;?>">Réserver cette chambre</a></button>
+											<p>Prix : <?php  echo htmlentities($row->Price);?> € </p>
+											<button class="btn btn-success"><a href="book-room.php?rmid=<?php echo $row->rmid;?>">Réserver cette chambre</a></button><BR>
 										</div>
 										<div class="clearfix"></div>
-									</div>
+									</div><BR><BR><BR>
 									<?php $cnt=$cnt+1;
 								}
 							} 

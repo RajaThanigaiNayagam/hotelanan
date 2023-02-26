@@ -100,7 +100,7 @@ if (strlen($_SESSION['hotelanan']==0)) {
                                             <?php 
                                             $grandtotal+=$total;
                                             $cnt=$cnt+1;
-                                } ?>
+                                            } ?>
                                             <tr>
                                               <th colspan="2" style="text-align:center;color: blue">Total </th>
                                             <td colspan="2" style="text-align: center;"><?php  echo $grandtotal;?></td>
@@ -110,10 +110,9 @@ if (strlen($_SESSION['hotelanan']==0)) {
                             } ?>
                                         </table>
                                     </table> 
-                                    <p style="text-align: center;font-size: 20px">
-                                    <input name="Submit2" type="submit" class="btn btn-success" style="color: red;font-size: 20px" value="Print" onClick="return f3();" style="cursor: pointer;"  /></p>
+                            <p style="text-align: center;font-size: 20px">
+                            <input name="Submit2" type="submit" class="btn btn-success" style="color: red;font-size: 20px" value="Print" onClick="return f3();" style="cursor: pointer;"  /></p>
                     </div>
-                      
                 </div>
                 <!-- //container-wrap -->
             </div>

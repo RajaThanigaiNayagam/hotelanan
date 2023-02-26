@@ -5,7 +5,6 @@
     //  apper le fichier  includephp/connectiondb.php
     include('includephp/connectionbd.php');
 
-error_reporting(0);
 if (strlen($_SESSION['hotelanan']==0)) {
 	header('location:logout.php');
 	} else{

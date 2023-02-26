@@ -25,6 +25,7 @@ if(isset($_POST['submit']))
 		$chngpwd1-> bindParam(':newpassword', $newpassword, PDO::PARAM_STR);
 		$chngpwd1->execute();
 		echo "<script>alert('Votre mot de passe a été modifié avec succès');</script>";
+		echo "<script>window.location.href ='signin.php'</script>";
 	}
 	else {
 		echo "<script>alert('L'identifiant de messagerie ou le numéro de mobile n'est pas valide');</script>"; 

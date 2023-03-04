@@ -113,7 +113,7 @@ if (strlen($_SESSION['hotelanan']==0)) {
 																<div class="form-group"> <label for="exampleInputEmail1">No. of Bed</label> <input type="text" class="form-control" name="nobed" value="<?php  echo $row->NoofBed;?>" required='true'> </div>
 																<div class="form-group"> <label for="exampleInputEmail1">Room Image</label> &nbsp;&nbsp;
 																	<img src="images/<?php echo $row->Image;?>" width="100" height="100" value="<?php  echo $row->Image;?>">
-																	<a href="changeimage.php?editid=<?php echo $row->ID;?>"> &nbsp; Edit Image</a>
+																	<a href="changeimage.php?editid=<?php echo $row->ID;?>"><!-- &nbsp; Edit Image--></a>
 																</div>									
 																<?php $cnt=$cnt+1;
 															}

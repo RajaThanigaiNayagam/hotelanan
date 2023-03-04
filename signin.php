@@ -59,7 +59,8 @@
 	<div class="content">
 		<div class="contact">
 			<div class="container">
-				<h2>Si vous avez un compte avec nous se connectez S.V.P</h2>
+				<h2>Si vous avez un compte avec nous</h2>
+				<h2>Veuillez vous connectez S.V.P</h2>
 				<div class="contact-grids">
 					<div class="col-md-6 contact-right">
 						<form method="post">

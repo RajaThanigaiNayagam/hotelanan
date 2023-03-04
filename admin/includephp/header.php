@@ -19,7 +19,7 @@
                     <div class="header">
                         <div class="head-t">
                             <div class="logo">
-                                <a href="dashboard.php" style="font-size: 20px;">Hotel ANAN - Systéme de réservation</a>
+                                <a href="dashboard.php" style="font-size: 20px;">Hôtel ANAN - Systéme de réservation</a>
                             </div>
                             <!-- start header_right -->
                             <div class="clearfix"> </div>

@@ -1,6 +1,6 @@
                 <div class="sidebar-menu">
                     <header class="logo1">
-                        <span style="font-size:26px; font-weight:bold">Hotel ANAN</span>
+                        <span style="font-size:26px; font-weight:bold">Hôtel ANAN</span>
                         <!--<a href="#" class="sidebar-icon"><span class="fa fa-bars"></span> </a> -->
                     </header>
                     <!--<div style="border-top:1px ridge rgba(255, 255, 255, 0.15)"></div>-->
@@ -25,7 +25,7 @@
                                     <li id="menu--reportcard" ><a href="manage-room.php">Modif chambre</a></li>
                                 </ul>
                             </li>
-                            <li id="menu-" ><a href="#"><i class="fa fa-file-text-o"></i> <span>Page de l'Hotel</span> <span class="fa fa-angle-right" style="float: right"></span></a>
+                            <li id="menu-" ><a href="#"><i class="fa fa-file-text-o"></i> <span>Page de l'Hôtel</span> <span class="fa fa-angle-right" style="float: right"></span></a>
                                 <ul id="menu-academic-sub" >
                                     <li id="menu-assessments" ><a href="aboutus.php">à propos de nous</a></li>
                                     <li id="menu--reportcard" ><a href="contactus.php">Nous contacter</a></li>

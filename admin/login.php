@@ -43,7 +43,7 @@ if(isset($_POST['login']))
 <!DOCTYPE HTML>
 <html>
 	<head>
-	<title>Hotel ANAN - Systéme de réservation | Page de connexion administrateur</title>
+	<title>Hôtel ANAN - Systéme de réservation | Page de connexion administrateur</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		
 		<!-- --------------------------- appel jquery --------------------------------- -->
@@ -70,7 +70,7 @@ if(isset($_POST['login']))
 			<div class="left-content" >
 				<div class="inner-content" >
 					<div class="content">
-						<h3 style="color: red;font-family: cursive;">Hotel ANAN - Systéme de réservation</h3>
+						<h3 style="color: red;font-family: cursive;">Hôtel ANAN - Systéme de réservation</h3>
 						<div class="women_main">
 							<!-- start content -->
 							<div class="registration">

@@ -31,7 +31,7 @@ if(isset($_POST['submit']))
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Hotel ANAN - Systéme de réservation | Mot de passe oublié Page</title>
+		<title>Hôtel ANAN - Systéme de réservation | Mot de passe oublié Page</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		
 		<!-- --------------------------- appel jquery --------------------------------- -->

@@ -11,7 +11,7 @@ if (strlen($_SESSION['hotelanan']==0)) {
 	<!DOCTYPE HTML>
 	<html>
 		<head>
-			<title>Hotel ANAN - Systéme de réservation | Toutes les réservations</title>
+			<title>Hôtel ANAN - Systéme de réservation | Toutes les réservations</title>
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
 			
 			<!-- --------------------------- appel jquery --------------------------------- -->
@@ -118,22 +118,22 @@ if (strlen($_SESSION['hotelanan']==0)) {
 																<?php } ?>
 															</tbody>
 														</table>
-													<!-- -------Formula for pagination------ -->
-													<nav aria-label="Page navigation example">
-														<div align="left">
-															<ul class="pagination" >
-																<li class="page-item"><a class="page-link" href="?pageno=1"><strong>Première page>></strong></a></li>
-																<li class="page-item <?php if($pageno <= 1){ echo 'disabled'; } ?>">
-																	<a class="page-link" href="<?php if($pageno <= 1){ echo '#'; } else { echo "?pageno=".($pageno - 1); } ?>"><strong style="padding-left: 10px">Précédete></strong></a>
-																</li>
-																<li class="page-item <?php if($pageno >= $total_pages){ echo 'disabled'; } ?>">
-																	<a class="page-link" href="<?php if($pageno >= $total_pages){ echo '#'; } else { echo "?pageno=".($pageno + 1); } ?>"><strong style="padding-left: 10px">Suivante></strong></a>
-																</li>
-																<li class="page-item"><a class="page-link" href="?pageno=<?php echo $total_pages; ?>"><strong style="padding-left: 10px">Dernière page</strong></a></li>
-															</ul>
-														</div>
-													</nav>
-													<!-- ------/Formula for pagination------ -->
+														<!-- -------Formula for pagination------ -->
+														<nav aria-label="Page navigation example">
+															<div align="left">
+																<ul class="pagination" >
+																	<li class="page-item"><a class="page-link" href="?pageno=1"><strong>Première page>></strong></a></li>
+																	<li class="page-item <?php if($pageno <= 1){ echo 'disabled'; } ?>">
+																		<a class="page-link" href="<?php if($pageno <= 1){ echo '#'; } else { echo "?pageno=".($pageno - 1); } ?>"><strong style="padding-left: 10px">Précédete></strong></a>
+																	</li>
+																	<li class="page-item <?php if($pageno >= $total_pages){ echo 'disabled'; } ?>">
+																		<a class="page-link" href="<?php if($pageno >= $total_pages){ echo '#'; } else { echo "?pageno=".($pageno + 1); } ?>"><strong style="padding-left: 10px">Suivante></strong></a>
+																	</li>
+																	<li class="page-item"><a class="page-link" href="?pageno=<?php echo $total_pages; ?>"><strong style="padding-left: 10px">Dernière page</strong></a></li>
+																</ul>
+															</div>
+														</nav>
+														<!-- ------/Formula for pagination------ -->
 														<div class="clearfix"></div>
 													</div>
 												</div>

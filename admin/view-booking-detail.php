@@ -28,7 +28,7 @@ if (strlen($_SESSION['hotelanan']==0)) {
 	<!DOCTYPE HTML>
 	<html>
 	<head>
-		<title>Hotel ANAN - Systéme de réservation | Afficher la réservation</title>
+		<title>Hôtel ANAN - Systéme de réservation | Afficher la réservation</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		
 		<!-- --------------------------- appel jquery --------------------------------- -->
@@ -71,7 +71,8 @@ if (strlen($_SESSION['hotelanan']==0)) {
 											</div>
 											<div class="form-body">
 												<?php
-												$bookid=$_GET['bookingid'];
+												$bookid=$_GET['bookingid'];  //**** Récupération id de réservation. Le paramètre 'bookingid' qui vient methode POST OR GET ****
+												//**** Requètte SQL qui requpère les info de TABLE  "room", "roomcategory" et "user" pour le "bookingid" donneé ****
 												$sql="SELECT booking.BookingNumber,user.FullName,user.MobileNumber,user.Email,booking.IDType,booking.Gender,booking.Address,booking.CheckinDate,booking.CheckoutDate,booking.BookingDate,booking.Remark,booking.Status,booking.UpdationDate,roomcategory.CategoryName,roomcategory.Description,roomcategory.Price,room.RoomName,room.MaxAdult,room.MaxChild,room.RoomDesc,room.NoofBed,room.Image,room.RoomFacility 
 												from booking 
 												join room on booking.RoomId=room.ID 
@@ -80,7 +81,7 @@ if (strlen($_SESSION['hotelanan']==0)) {
 												where booking.BookingNumber=:bookid";
 												$query = $dbh -> prepare($sql);
 												$query-> bindParam(':bookid', $bookid, PDO::PARAM_STR);
-												$query->execute();
+												$query->execute();  //**** stoké toutes les enregistrement de resultat de requètte SQL ****
 												$results=$query->fetchAll(PDO::FETCH_OBJ);
 												$cnt=1;
 												if($query->rowCount() > 0)

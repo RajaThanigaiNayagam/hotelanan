@@ -19,7 +19,7 @@ include('includephp/connectionbd.php');
 	<!-- -------------------------appel POLICE RANCHO------------------------------ -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet">*
+    <link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet">
     <!--  ------------------------appel fichier style.css----------------------   -->
     <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
     <!-- -------------------------APPEL BOOTSTRAP-------------------------------- -->

@@ -106,13 +106,13 @@ if (strlen($_SESSION['hotelanan']==0)) {
 																			<td class="font-w600"><?php  echo htmlentities($row->FullName);?></td>
 																			<td class="text-center"><?php  echo htmlentities($row->Email);?></td>
 																			<td class="text-center"><?php  echo htmlentities($row->MobileNumber);?></td>
-																			<td class="text-center"><span class="badge rounded-pill bg-success"><?php  echo htmlentities($row->BookingDate);?></span></td>
+																			<td class="text-center"><?php  echo htmlentities($row->BookingDate);?> </td>
 																			
 																			<?php if($row->Status==""){ ?>
 																				<td class="font-w600"><?php echo "Pas encore mis à jour"; ?></td>
 																			<?php } else { ?>
-																				<td class="text-center">
-																					<span class="badge rounded-pill bg-success"><?php  echo htmlentities($row->Status);?></span>
+																				<td class="text-center badge rounded-pill bg-success">
+																					<?php  echo htmlentities($row->Status);?>
 																				</td>
 																			<?php } ?> 
 																			<td class="text-center"><a href="view-booking-detail.php?bookingid=<?php echo htmlentities ($row->BookingNumber);?>"><i class="fa fa-eye" aria-hidden="true"></i></a></td>

@@ -1,10 +1,9 @@
 <?php
     session_start();      //demarrage du session d'un utilisateur admin/clinet 
     error_reporting(0);   //Désactiver tous les rapports d'erreurs
-
-    //  apper le fichier  includephp/connectiondb.php
-    include('includephp/connectionbd.php');
-
+    
+    include('includephp/connectionbd.php');   //  apper le fichier  includephp/connectiondb.php
+    //------- Réquette SQL pour recupère tout les admin depuis la table "admin"  -------//
     $ret="SELECT * from admin";
     $query1 = $dbh -> prepare($ret);
     $query1->execute();
@@ -13,7 +12,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Hotel ANAN - Systéme de réservation | Home :: Page</title>
+    <title>Hôtel ANAN - Systéme de réservation | Home :: Page</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     
 	<!-- --------------------------- appel jquery --------------------------------- -->

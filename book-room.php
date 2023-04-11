@@ -48,9 +48,9 @@ if (strlen($_SESSION['hotelanan']==0)) {
 	<!DOCTYPE HTML>
 	<html>
 		<head>
-			<title>Hotel ANAN - Systéme de réservation | Hotel :: Réserver la chambre</title>
+			<title>Hôtel ANAN - Systéme de réservation | Hôtel :: Réserver la chambre</title>
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
-			<meta name="description" content="HOTEL ANAN Réservation chambres - Rooms booking">
+			<meta name="description" content="HÔTEL ANAN Réservation chambres - Rooms booking">
 			<meta name="author" content="RAJA Thanigai Nayagam">
 					
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script><!-- -------------------------appel POLICE RANCHO------------------------------ -->
@@ -77,7 +77,7 @@ if (strlen($_SESSION['hotelanan']==0)) {
 			<div class="content">
 				<div class="contact">
 					<div class="container">
-						<h2>Book Your Room</h2>
+						<h2>Réservez votre chambre</h2>
 						<div class="contact-grids">
 							<div class="col-md-6 contact-right">
 								<form method="post">
@@ -93,11 +93,11 @@ if (strlen($_SESSION['hotelanan']==0)) {
 										{
 											foreach($results as $row)
 											{               ?>
-												<h5>Name</h5>
+												<h5>Nom</h5>
 												<input type="text"  value="<?php  echo $row->FullName;?>" name="name" class="form-control" required="true" readonly="true">
-												<h5>Mobile Number</h5>
+												<h5>Numéro de portable</h5>
 												<input type="text" name="phone" class="form-control" required="true" maxlength="10" pattern="[0-9]+" value="<?php  echo $row->MobileNumber;?>" readonly="true">
-												<h5>Email Address</h5>
+												<h5>Adresse e-mail</h5>
 												<input  type="email" value="<?php  echo $row->Email;?>" class="form-control" name="email" required="true" readonly="true"><?php $cnt=$cnt+1;
 											}
 										} ?>

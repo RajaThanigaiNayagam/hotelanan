@@ -70,20 +70,21 @@ if (strlen($_SESSION['hotelanan']==0)) {
 																<?php
 																		// ---------initiage pagination-------//
 																if (isset($_GET['pageno'])) {
-																	$pageno = $_GET['pageno'];
+																	$pageno = $_GET['pageno']; // -------- Variable $pageno prend le veleur numero de page page courrant -------//
 																} else {
 																	$pageno = 1;
 																}
-																// --------/initiage pagination-------//
+																// --------initiage pagination-------//
 																// -------Formula for pagination------//
-																$no_of_records_per_page = 5;
-																$offset = ($pageno-1) * $no_of_records_per_page;
+																$no_of_records_per_page = 5;     // -------- Variable $no_of_records_per_page pour afficher nomber d'enregistrement par page -------//
+																$offset = ($pageno-1) * $no_of_records_per_page;    // -------- Variabel $offset prend le valeur, le numero d'enregistrement courrant sur l'ensembles des enregistrement apartire la quelle a afficher-------//
 																$ret = "SELECT ID FROM booking";
 																$query1 = $dbh -> prepare($ret);
 																$query1->execute();
 																$results1=$query1->fetchAll(PDO::FETCH_OBJ);
 																$total_rows=$query1->rowCount();
 																$total_pages = ceil($total_rows / $no_of_records_per_page);
+																//------- requette pour 
 																$sql="SELECT user.*,booking.BookingNumber,booking.ID,booking.Status,booking.BookingDate from booking join user on booking.UserID=user.ID  LIMIT $offset, $no_of_records_per_page";
 																$query = $dbh -> prepare($sql);
 																$query->execute();
@@ -134,7 +135,7 @@ if (strlen($_SESSION['hotelanan']==0)) {
 															</div>
 														</nav>
 														<!-- ------/Formula for pagination------ -->
-														<div class="clearfix"></div>
+														<div class="clearfix"></div><!------- Quickly and easily clear floated content within a container by adding a clearfix utility.------->
 													</div>
 												</div>
 											</div>
@@ -148,9 +149,9 @@ if (strlen($_SESSION['hotelanan']==0)) {
 					</div>
 				</div>
 				<!--//content-inner-->
-				<!--/sidebar-menu-->
+				<!--/call sidebar-menu-->
 				<?php include_once('includephp/sidebar.php');?>
-				<div class="clearfix"></div>		
+				<div class="clearfix"></div>	<!------- Quickly and easily clear floated content within a container by adding a clearfix utility. ------->
 			</div>
 			<!--JavaScript Bundle with Popper -->
 			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>

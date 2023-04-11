@@ -32,9 +32,9 @@ include('includephp/connectionbd.php');
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Hotel ANAN - Systéme de réservation | Hotel :: Contact Us</title>
+		<title>Hôtel ANAN - Systéme de réservation | Hôtel :: Nous Contacter</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="description" content="HOTEL ANAN Réservation chambres - Rooms booking">
+		<meta name="description" content="HÔTEL ANAN Réservation chambres - Rooms booking">
 		<meta name="author" content="RAJA Thanigai Nayagam">
 		
 		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>

@@ -75,7 +75,6 @@ if(isset($_POST['login']))
 							<!-- start content -->
 							<div class="registration">
 								<div class="registration_left">
-
 									<h2>Veuillez vous connecter</h2>
 									<div class="registration_form">
 									<!-- Form -->

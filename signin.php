@@ -30,9 +30,9 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>Hotel ANAN - Systéme de réservation | Hotel :: Page de connection</title>
+	<title>Hôtel ANAN - Systéme de réservation | Hôtel :: Page de connection</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="HOTEL ANAN Réservation chambres - Rooms booking">
+	<meta name="description" content="HÖTEL ANAN Réservation chambres - Rooms booking">
 	<meta name="author" content="RAJA Thanigai Nayagam">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script><!-- -------------------------appel POLICE RANCHO------------------------------ -->

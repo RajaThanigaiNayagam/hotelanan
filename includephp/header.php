@@ -5,7 +5,7 @@
     <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
         <div class="container-fluid">
         <div class="navbar-brand">
-            <h3><a href="index.php">Hotel ANAN</a></h3>
+            <h3><a href="index.php">Hôtel ANAN</a></h3>
         </div>
 
         <!----------------------------------------------------------->
@@ -28,11 +28,11 @@
                     <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Chambres</span></a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <?php
-                                $ret="SELECT * from roomcategory";
+                                $ret="SELECT * from roomcategory"; //-------- Requette sql pour recuperer toutes les enregistrement depuis la table "roomcategory" -------//
                                 $query1 = $dbh -> prepare($ret);
                                 $query1->execute();
                                 $resultss=$query1->fetchAll(PDO::FETCH_OBJ);
-                                foreach($resultss as $rows)
+                                foreach($resultss as $rows) //-------- to fill the drop down bar with all the category, so that un user can choose a room category that he wants -------//
                                 {               ?>
                                     <li><a class="dropdown-item" href="category-details.php?catid=<?php echo htmlentities($rows->ID)?>"><?php echo htmlentities($rows->CategoryName)?></a></li>
                                 <?php } ?>
@@ -41,7 +41,7 @@
                 </li>
                 <!--<li class="nav-item"><a class="nav-link"  href="gallery.php">Gallery</a></li>-->
                 <li class="nav-item"><a class="nav-link"  href="contact.php">Contact</a></li>
-                <!-- ----------Si l utilisateu n est connectée---------- -->
+                <!-- ----------Verification si l'utilisateu n est connectée---------- -->
                 <?php if (strlen($_SESSION['hotelanan']==0)) 
                 {$_SESSION['hotelanan']?>
                     <li class="nav-item"><a class="nav-link" href="admin/login.php">Admin</a></li>

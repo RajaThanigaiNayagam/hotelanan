@@ -52,18 +52,24 @@ if (strlen($_SESSION['hotelanan']==0)) {
 													<div class="form-title">
 														<h4>Toutes les réservation</h4>
 													</div>
-													<div class="form-body">
+													</div class="form-body">
 														<table class="table table-bordered table-striped table-vcenter js-dataTable-full-pagination">
 															<thead>
 																<tr>
 																	<th class="text-center">Num. de serie</th>
 																	<th>Numéro de réservation</th>
 																	<th>Nom</th>
-																	<th class="d-none d-sm-table-cell">E-mail</th>
+																	<th class="text-center">E-mail</th>
+																	<th class="text-center">Numéro de portable</th>
+																	<th class="text-center">Date de réservation</th>
+																	<th class="text-center">État de réservation</th>
+																	<th class="text-center" style="width: 15%;">Action</th>
+																	
+																	<!--<th class="d-none d-sm-table-cell">E-mail</th>
 																	<th class="d-none d-sm-table-cell">Numéro de portable</th>
 																	<th class="d-none d-sm-table-cell">Date de réservation</th>
 																	<th class="d-none d-sm-table-cell">État de réservation</th>
-																	<th class="d-none d-sm-table-cell" style="width: 15%;">Action</th>
+																	<th class="d-none d-sm-table-cell" style="width: 15%;">Action</th>-->
 																</tr>
 															</thead>
 															<tbody>
@@ -98,17 +104,18 @@ if (strlen($_SESSION['hotelanan']==0)) {
 																			<td class="text-center"><?php echo htmlentities($cnt);?></td>
 																			<td class="font-w600"><?php  echo htmlentities($row->BookingNumber);?></td>
 																			<td class="font-w600"><?php  echo htmlentities($row->FullName);?></td>
-																			<td class="d-none d-sm-table-cell"><?php  echo htmlentities($row->Email);?></td>
-																			<td class="d-none d-sm-table-cell"><?php  echo htmlentities($row->MobileNumber);?></td>
-																			<td class="d-none d-sm-table-cell"><span class="badge rounded-pill bg-success"><?php  echo htmlentities($row->BookingDate);?></span></td>
+																			<td class="text-center"><?php  echo htmlentities($row->Email);?></td>
+																			<td class="text-center"><?php  echo htmlentities($row->MobileNumber);?></td>
+																			<td class="text-center"><span class="badge rounded-pill bg-success"><?php  echo htmlentities($row->BookingDate);?></span></td>
+																			
 																			<?php if($row->Status==""){ ?>
 																				<td class="font-w600"><?php echo "Pas encore mis à jour"; ?></td>
 																			<?php } else { ?>
-																				<td class="d-none d-sm-table-cell">
+																				<td class="text-center">
 																					<span class="badge rounded-pill bg-success"><?php  echo htmlentities($row->Status);?></span>
 																				</td>
 																			<?php } ?> 
-																			<td class="d-none d-sm-table-cell"><a href="view-booking-detail.php?bookingid=<?php echo htmlentities ($row->BookingNumber);?>"><i class="fa fa-eye" aria-hidden="true"></i></a></td>
+																			<td class="text-center"><a href="view-booking-detail.php?bookingid=<?php echo htmlentities ($row->BookingNumber);?>"><i class="fa fa-eye" aria-hidden="true"></i></a></td>
 																		</tr>
 																		<?php $cnt=$cnt+1;
 																	}
@@ -123,14 +130,14 @@ if (strlen($_SESSION['hotelanan']==0)) {
 														<nav aria-label="Page navigation example">
 															<div align="left">
 																<ul class="pagination" >
-																	<li class="page-item"><a class="page-link" href="?pageno=1"><strong>Première page>></strong></a></li>
+																	<li class="page-item"><a class="page-link" href="?pageno=1"><strong>Première page&#187;</strong></a></li>
 																	<li class="page-item <?php if($pageno <= 1){ echo 'disabled'; } ?>">
-																		<a class="page-link" href="<?php if($pageno <= 1){ echo '#'; } else { echo "?pageno=".($pageno - 1); } ?>"><strong style="padding-left: 10px">Précédete></strong></a>
+																		<a class="page-link" href="<?php if($pageno <= 1){ echo '#'; } else { echo "?pageno=".($pageno - 1); } ?>"><strong style="padding-left: 10px">&#8249;Précédete</strong></a>
 																	</li>
 																	<li class="page-item <?php if($pageno >= $total_pages){ echo 'disabled'; } ?>">
-																		<a class="page-link" href="<?php if($pageno >= $total_pages){ echo '#'; } else { echo "?pageno=".($pageno + 1); } ?>"><strong style="padding-left: 10px">Suivante></strong></a>
+																		<a class="page-link" href="<?php if($pageno >= $total_pages){ echo '#'; } else { echo "?pageno=".($pageno + 1); } ?>"><strong style="padding-left: 10px">Suivante&#8250;</strong></a>
 																	</li>
-																	<li class="page-item"><a class="page-link" href="?pageno=<?php echo $total_pages; ?>"><strong style="padding-left: 10px">Dernière page</strong></a></li>
+																	<li class="page-item"><a class="page-link" href="?pageno=<?php echo $total_pages; ?>"><strong style="padding-left: 10px">&#171;Dernière page</strong></a></li>
 																</ul>
 															</div>
 														</nav>

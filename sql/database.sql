@@ -1,6 +1,6 @@
 
 --
--- Table structure for table `tbladmin`
+-- Table structure for table `admin`
 --
 
 CREATE TABLE `admin` (
@@ -16,7 +16,7 @@ CREATE TABLE `admin` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tblcategory`
+-- Table structure for table `category`
 --
 
 CREATE TABLE `roomcategory` (
@@ -29,7 +29,7 @@ CREATE TABLE `roomcategory` (
 
 
 --
--- Table structure for table `tbluser`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -42,7 +42,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Table structure for table `tblpage`
+-- Table structure for table `page`
 --
 
 CREATE TABLE `pageutil` (
@@ -56,7 +56,7 @@ CREATE TABLE `pageutil` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Table structure for table `tblcontact`
+-- Table structure for table `contact`
 --
 
 CREATE TABLE `contact` (
@@ -70,7 +70,7 @@ CREATE TABLE `contact` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Table structure for table `tblbooking`
+-- Table structure for table `booking`
 --
 
 CREATE TABLE `booking` (
@@ -90,7 +90,7 @@ CREATE TABLE `booking` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Table structure for table `tblroom`
+-- Table structure for table `room`
 -- -----------------OK-------------------
 --
 
@@ -112,45 +112,45 @@ CREATE TABLE `room` (
 --
 
 --
--- Indexes for table `tbladmin`
+-- Indexes for table `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indexes for table `tblbooking`
+-- Indexes for table `booking`
 --
 ALTER TABLE `booking`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indexes for table `tblcategory`
+-- Indexes for table `category`
 --
 ALTER TABLE `roomcategory`
   ADD PRIMARY KEY (`ID`),
   ADD KEY `ID` (`ID`);
 
 --
--- Indexes for table `tblcontact`
+-- Indexes for table `contact`
 --
 ALTER TABLE `contact`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indexes for table `tblpage`
+-- Indexes for table `page`
 --
 ALTER TABLE `pageutil`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indexes for table `tblroom`
+-- Indexes for table `room`
 --
 ALTER TABLE `room`
   ADD PRIMARY KEY (`ID`),
   ADD KEY `RoomType` (`RoomType`);
 
 --
--- Indexes for table `tbluser`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`ID`),
@@ -161,42 +161,42 @@ ALTER TABLE `user`
 --
 
 --
--- AUTO_INCREMENT for table `tbladmin`
+-- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
   MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `tblbooking`
+-- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
   MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `tblcategory`
+-- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `roomcategory`
   MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `tblcontact`
+-- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
   MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
--- AUTO_INCREMENT for table `tblpage`
+-- AUTO_INCREMENT for table `page`
 --
 ALTER TABLE `pageutil`
   MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `tblroom`
+-- AUTO_INCREMENT for table `room`
 --
 ALTER TABLE `room`
   MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `tbluser`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
@@ -204,14 +204,14 @@ ALTER TABLE `user`
 
 
 --
--- Dumping data for table `tbladmin`
+-- Dumping data for table `admin`
 --
 
 INSERT INTO `admin` (`ID`, `AdminName`, `UserName`, `MobileNumber`, `Email`, `Password`, `AdminRegdate`) VALUES
 (1, 'Admin', 'admin', 5689784592, 'admin@gmail.com', 'f925916e2754e5e03f75dd58a5733251', '2022-10-27 07:25:30');
 
 --
--- Dumping data for table `tblcategory`
+-- Dumping data for table `category`
 --
 
 INSERT INTO `roomcategory` (`ID`, `CategoryName`, `Description`, `Price`, `Date`) VALUES
@@ -222,7 +222,7 @@ INSERT INTO `roomcategory` (`ID`, `CategoryName`, `Description`, `Price`, `Date`
 (5, 'Chambre suite', 'chambres de luxe. Peut être occupé par une ou plusieurs personnes.', 300, '2022-10-28 06:46:30');
 
 --
--- Dumping data for table `tbluser`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`ID`, `FullName`, `MobileNumber`, `Email`, `Password`, `RegDate`) VALUES
@@ -232,7 +232,7 @@ INSERT INTO `user` (`ID`, `FullName`, `MobileNumber`, `Email`, `Password`, `RegD
 
 
 --
--- Dumping data for table `tblpage`
+-- Dumping data for table `page`
 --
 
 INSERT INTO `pageutil` (`ID`, `PageType`, `PageTitle`, `PageDescription`, `Email`, `MobileNumber`, `UpdationDate`) VALUES
@@ -240,7 +240,7 @@ INSERT INTO `pageutil` (`ID`, `PageType`, `PageTitle`, `PageDescription`, `Email
 (2, 'Nous contacter', 'Nous contacter', 'N. 11 Résidence des tilleuls, 77340 Pontault Combault', 'info@gmail.com', 8529631236, '2022-10-29 14:14:30');
 
 --
--- Dumping data for table `tblcontact`
+-- Dumping data for table `contact`
 --
 
 INSERT INTO `contact` (`ID`, `Name`, `MobileNumber`, `Email`, `Message`, `EnquiryDate`, `IsRead`) VALUES
@@ -252,7 +252,7 @@ INSERT INTO `contact` (`ID`, `Name`, `MobileNumber`, `Email`, `Message`, `Enquir
 
 
 --
--- Dumping data for table `tblbooking`
+-- Dumping data for table `booking`
 --
 
 INSERT INTO `booking` (`ID`, `RoomId`, `BookingNumber`, `UserID`, `IDType`, `Gender`, `Address`, `CheckinDate`, `CheckoutDate`, `BookingDate`, `Remark`, `Status`, `UpdationDate`) VALUES
@@ -260,7 +260,7 @@ INSERT INTO `booking` (`ID`, `RoomId`, `BookingNumber`, `UserID`, `IDType`, `Gen
 (2, 1, '132018073', 3, 'Passport', 'femme', 'cretail  France', '2022-11-05', '2022-11-06', '2022-11-03 14:54:49', 'Booking Confirmed.', 'Approved', '2022-11-03 15:00:46');
 
 --
--- Dumping data for table `tblroom`
+-- Dumping data for table `room`
 --
 
 INSERT INTO `room` (`ID`, `RoomType`, `RoomName`, `MaxAdult`, `MaxChild`, `RoomDesc`, `NoofBed`, `Image`, `RoomFacility`, `CreationDate`) VALUES

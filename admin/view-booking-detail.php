@@ -73,7 +73,8 @@ if (strlen($_SESSION['hotelanan']==0)) {
 												<?php
 												$bookid=$_GET['bookingid'];  //**** Récupération id de réservation. Le paramètre 'bookingid' qui vient methode POST OR GET ****
 												//**** Requètte SQL qui requpère les info de TABLE  "room", "roomcategory" et "user" pour le "bookingid" donneé ****
-												$sql="SELECT booking.BookingNumber,user.FullName,user.MobileNumber,user.Email,booking.IDType,booking.Gender,booking.Address,booking.CheckinDate,booking.CheckoutDate,booking.BookingDate,booking.Remark,booking.Status,booking.UpdationDate,roomcategory.CategoryName,roomcategory.Description,roomcategory.Price,room.RoomName,room.MaxAdult,room.MaxChild,room.RoomDesc,room.NoofBed,room.Image,room.RoomFacility 
+												$sql="SELECT booking.BookingNumber,user.FullName,user.MobileNumber,user.Email,booking.IDType,booking.Gender,booking.Address,booking.CheckinDate,booking.CheckoutDate,booking.BookingDate,booking.Remark,booking.Status,booking.UpdationDate,roomcategory.
+												CategoryName,roomcategory.Description,roomcategory.Price,room.RoomName,room.MaxAdult,room.MaxChild,room.RoomDesc,room.NoofBed,room.Image,room.RoomFacility 
 												from booking 
 												join room on booking.RoomId=room.ID 
 												join roomcategory on roomcategory.ID=room.RoomType 
@@ -160,15 +161,15 @@ if (strlen($_SESSION['hotelanan']==0)) {
 																<td> <?php  $status=$row->Status;
 																	if($row->Status=="Approved")
 																	{
-																	echo "Your Booking has been approved";
+																	echo "Votre réservation a été approuvée";
 																	}
 																	if($row->Status=="Cancelled")
 																	{
-																	echo "Your Booking has been cancelled";
+																	echo "Votre réservation a été annulée";
 																	}
 																	if($row->Status=="")
 																	{
-																	echo "Not Response Yet";
+																	echo "Pas encore répondu";
 																	}
 																		;?>
 																</td>

@@ -42,6 +42,7 @@ include('includephp/connectionbd.php');
 					<div class="room-grids">
 						<?php
 							$cid=intval($_GET['catid']); 
+							// SQL to recupere detail de chambre form the table "romm,  roomcategory" pour son categorie est $cid
 							$sql="SELECT room.*,room.id as rmid , roomcategory.Price,roomcategory.ID,roomcategory.CategoryName from room 
 							join roomcategory on room.RoomType=roomcategory.ID 
 							where room.RoomType=:cid";

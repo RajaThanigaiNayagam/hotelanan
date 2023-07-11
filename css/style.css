@@ -33,6 +33,14 @@ input[type="button"]{
     font-family: 'Kolker Brush', cursive;
     margin-top: 1em;
 }
+
+
+.reservebutton:hover, .reservebutton:focus {
+    color: #fff;
+    text-decoration: none;
+    background-color: #bae2b1;
+}
+
 .navbar-brand {
     float: left;
 	margin-left: 0.8em;

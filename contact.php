@@ -22,10 +22,10 @@ include('includephp/connectionbd.php');
 
 	$LastInsertId=$dbh->lastInsertId();
 	if ($LastInsertId>0) {
-		echo "<script>alert('Your message was sent successfully!.');</script>";
+		echo "<script>alert('Votre message a bien été envoyé!.');</script>";
 		echo "<script>window.location.href ='contact.php'</script>";
 	}else{
-		echo '<script>alert("Something Went Wrong. Please try again")</script>';
+		echo '<script>alert("Quelque chose a mal tourné. Veuillez réessayer")</script>';
 	}
 }
 ?>

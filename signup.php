@@ -30,6 +30,7 @@ if(isset($_POST['submit']))		 	//Inserée un nouelle utilisateur email at pwd da
 		if($lastInsertId)
 		{
 			echo "<script>alert('Vous vous êtes inscrit avec succès chez nous');</script>";
+			echo "<script>window.location.href ='signin.php'</script>";
 		}
 		else
 		{

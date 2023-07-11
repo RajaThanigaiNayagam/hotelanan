@@ -35,9 +35,22 @@
         <div class="header">
             <div class="container">
                 <?php include_once('includephp/header.php');?>
+
+                <section id="salledesport">
+                    <div class="row" style ="color : #4a7940; font-weight: bold; opacity: 7.5;">
+                        <div class="col-lg-6 col-md-6 col-12 order-1">
+                            <h6 class="display-6"><span>Bienvenu dans <br> notre Salle de sport</span> </h1>
+                            <p class="my-lg-2 my-3">Améliorez votre parcours de remise en forme au centre de remise en forme ultramoderne de l'Hotel Anan. Notre établissement bien équipé offre une gamme d'équipements et d'équipements d'exercice modernes pour vous aider à rester actif et motivé. Atteignez vos objectifs de mise en forme dans un environnement accueillant qui veille à votre bien-être. Découvrez le centre de remise en forme de l'Anandha Inn pour une séance d'entraînement enrichissante.</p>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-12 py-lg-0 py-3 order-sm-2" style ='display : flex; justify-content : center ; align-items : center ;'>
+                            <img src="images/salle de sport.jpg" class="img-fluid"  style ='width : 50%; height : 70% ;' >
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
         <!--header-->
+
         <!--footer-->
         <?php include_once('includephp/footer.php');?>
 

@@ -28,9 +28,9 @@ if (strlen($_SESSION['hotelanan']==0)) {
 				$chngpwd1-> bindParam(':newpassword', $newpassword, PDO::PARAM_STR);
 				$chngpwd1->execute();
 
-				echo '<script>alert("Your password successully changed")</script>';
+				echo '<script>alert("Votre mot de passe a bien été modifié")</script>';
 			} else {
-				echo '<script>alert("Your current password is wrong")</script>';
+				echo '<script>alert("Votre mot de passe actuel est erroné")</script>';
 			}
 		}  ?>
 		<!DOCTYPE HTML>
@@ -90,9 +90,9 @@ if (strlen($_SESSION['hotelanan']==0)) {
 									<input type="submit" value="Change" name="submit">
 								</form>
 							</div>
-							<div class="col-md-6 contact-right">
+							<!--<div class="col-md-6 contact-right">
 								<img src="images/img.jpg" width="400" height="400" />
-							</div>
+							</div>-->
 						<div class="clearfix"></div>
 					</div>
 				</div>

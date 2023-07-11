@@ -20,7 +20,7 @@ if (strlen($_SESSION['hotelanan']==0)) {
 		$query->bindParam(':mobilenumber',$mobno,PDO::PARAM_STR);
 		$query->bindParam(':uid',$uid,PDO::PARAM_STR);
 		$query->execute();
-		echo '<script>alert("Profile has been updated")</script>';
+		echo '<script>alert("Le profil a été mis à jour")</script>';
   	}
   	?>
 	<!DOCTYPE HTML>

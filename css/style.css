@@ -37,10 +37,11 @@ input[type="button"]{
 
 .reservebutton {
     background-color: #4a7940;
+    color: #fff !important;
 }
 
 .reservebutton:hover, .reservebutton:focus {
-    color: #fff;
+    color: #fff !important;
     text-decoration: none;
     background-color: #bae2b1;
 }

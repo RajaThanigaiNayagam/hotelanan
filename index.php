@@ -35,7 +35,7 @@
         <div class="header">
             <div class="container">
                 <?php include_once('includephp/header.php');?>
-
+                <!--
                 <section id="salledesport">
                     <div class="row" style ="color : #4a7940; font-weight: bold; opacity: 7.5;">
                         <div class="col-lg-6 col-md-6 col-12 order-1">
@@ -46,7 +46,7 @@
                             <img src="images/salle de sport.jpg" class="img-fluid"  style ='width : 50%; height : 70% ;' >
                         </div>
                     </div>
-                </section>
+                </section> -->
             </div>
         </div>
         <!--header-->

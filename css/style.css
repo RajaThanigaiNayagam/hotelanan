@@ -36,12 +36,16 @@ input[type="button"]{
 
 
 .reservebutton {
-    background-color: #4a7940;
-    color: #fff !important;
+    background-color: #5ab645;
+}
+
+.reservebutton a{
+    text-decoration: none;
+    color: black !important;
 }
 
 .reservebutton:hover, .reservebutton:focus {
-    color: #fff !important;
+    color: black !important;
     text-decoration: none;
     background-color: #bae2b1;
 }
@@ -77,7 +81,7 @@ input[type="button"]{
 }
 .navbar-brand h1 a, .navbar-brand h2 a, .navbar-brand h3 a, .navbar-brand h4 a, .navbar-brand h5 a {
     text-decoration: none;
-	color:#4a7940;
+	color:#4a7940;  
 	font-size: 1.5em;
     font-family: 'Kolker Brush', cursive;
     text-transform: capitalize;
@@ -141,13 +145,13 @@ input[type="button"]{
 .navbar-collapse {
     max-height: 340px;
     padding-right: 0px;
-     padding-left: 0px; 
+    padding-left: 0px; 
 }
 
 .header{
 	background:url(../images/hotelfront.jpg) no-repeat 0px 0px;
 	background-size:cover;
-   -webkit-background-size: cover;
+    -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     -ms-background-size: cover;
@@ -155,6 +159,15 @@ input[type="button"]{
 	padding-bottom: 4em;
 }
 
+
+
+.slider {
+	position: relative;
+	text-align: center;
+	/*width: 400px;
+    height: 400px;*/
+    margin: 10% 25% 0;
+}
 /** ------------------------Footer section------------------------- */
 .footer-section{
 	padding:2em 0;
@@ -187,11 +200,19 @@ input[type="button"]{
 	font-size: 3.5em;
     text-transform: capitalize;
     font-family: 'Rancho', cursive;
-    color: #222;
-    margin-bottom: 0.5em;
+    /**color: #222;*/
+    color: #4a7940;
+    /**margin-bottom: 0.5em;**/
 }
 /** ----------- /affiche tous les titre gros et gras ------------- */
 
+
+
+/** ----------- /affiche tous les titre gros et gras ------------- */
+.content > .contact > .container h5{
+    color: #4a7940;
+}
+/** ----------- /affiche tous les titre gros et gras ------------- */
 
 
 /** ------------------------about section------------------------- */
@@ -215,7 +236,8 @@ text-align:center;
 .about-section h5 {
     font-size: 1.2em;
     text-transform: capitalize;
-    color: #222;
+    /**color: #222;*/
+    color: #4a7940;
     margin: 0.8em 0;
     font-weight: 600;
 }
@@ -335,7 +357,14 @@ text-align:center;
 /*** ------------- du page de facture  - typography -------------- ***/
 .typography-info {
     text-align: center;
-    margin-bottom: 3em;
+    margin-bottom: 1em;
+}
+.typography-info > a {
+    float: left;
+    color: blue;
+}
+.typography > .container > p {
+    text-align: center;
 }
 h2.type {
     font-size: 3.5em;
@@ -431,7 +460,7 @@ section#tables  p {
   background-color: #ffffff;
 }
 .table td, .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
-  padding: 15px!important;
+  padding: 5px!important;
 }
 .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
   font-size: 0.9em;
@@ -482,6 +511,12 @@ ol {
 h2.typoh2{
     margin: 0 0 10px;
 }
+
+
+
+
+
+
 @media (max-width:768px){
 	.grid_5 {
 		padding: 0 0 1em;
@@ -490,6 +525,12 @@ h2.typoh2{
 		margin-bottom: 0em;
 	}
 }
+
+
+
+
+
+
 @media (max-width:640px){
 	h1, .h1, h2, .h2, h3, .h3 {
 		margin-top: 0px;
@@ -516,6 +557,13 @@ h2.typoh2{
 		font-size: 1.5em;
 	}
 }
+
+
+
+
+
+
+
 @media (max-width:480px){
 	.table h1 {
 		font-size: 26px;
@@ -536,6 +584,13 @@ h2.typoh2{
 		margin: 20px 0 0px;
 	}
 }
+
+
+
+
+
+
+
 @media (max-width: 320px){
 	.grid_4 {
 		margin-top: 18px;
@@ -572,7 +627,7 @@ h2.typoh2{
 
 /*** -------------------- du page de contact --------------------- ***/
 .contact{
-	padding: 4em 0;
+	padding: 2em 0;
 }
 .contact h2 {
 	font-size: 1.5em;
@@ -598,7 +653,7 @@ address {
 	text-transform: uppercase;
 	font-weight: 400;
 	padding: 10px 0;
-	color: #222;
+	color: #4a7940;
 	
 }
 .contact-right input[type="text"] {
@@ -612,33 +667,58 @@ address {
 	width: 100%;
 	padding: 10px 10px;
 	font-size: 1em;
-	height: 10em;
+	height: 5em;
 	resize: none;
 	outline: none;
 	border: 1px solid #dcdee0;
 }
 .contact-right input[type="submit"] {
-	width: 20%;
+	width: 20em;
 	font-size: 1em;
 	text-transform: uppercase;
-	background: #222;
+	/*background: #222;
+	background: #5ab645;*/
+	background: #86e970;
 	border: none;
 	outline: none;
 	margin-top: 0.5em;
-	color: #fff;
+	color: #4a7940;
 	font-weight: 500;
 	padding: 10px 0;
 }
 .contact-right input[type="submit"]:hover {
-	background: #5ab645;
+	background: #bae2b1;
+	font-weight: 500;
 }
 /*** -----------------fin du page de contact --------------------- ***/
 
 
-/*** ------------- du page de facture  - typography -------------- ***/
+
+/*** ---------------debut du page de reservation ----------------- ***/
+.reservation input[type="submit"] {
+	width: 20em;
+	font-size: 1em;
+	text-transform: uppercase;
+	/*background: #222;
+	background: #5ab645; */
+	background: #86e970;
+	border: none;
+	outline: none;
+	margin-top: 0.5em;
+	color: #4a7940;
+	font-weight: 500;
+	padding: 10px 0;
+}
+.reservation input[type="submit"]:hover {
+	background: #bae2b1;
+	font-weight: 500;
+}
+/*** --------------- fin du page de reservation ----------------- ***/
+
+/*** --------- debut du page de facture  - typography ----------- ***/
 .typography-info {
     text-align: center;
-    margin-bottom: 3em;
+    margin-bottom: 1em;
 }
 h2.type {
     font-size: 3.5em;
@@ -647,7 +727,7 @@ h2.type {
     color: #222;
 }
 .typography {
-    padding: 4em 0;
+    padding: 2em 0;
 }
 .show-grid [class^=col-] {
 	background: #fff;
@@ -734,13 +814,33 @@ section#tables  p {
   background-color: #ffffff;
 }
 .table td, .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
-  padding: 15px!important;
+  padding: 5px !important;
 }
 .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
   font-size: 0.9em;
   color: #999;
   border-top: none !important;
 }
+
+
+.table-res td, .table-res>tbody>tr>td, .table-res>tbody>tr>th, .table-res>tfoot>tr>td, .table-res>tfoot>tr>th, .table-res>thead>tr>td, .table-res>thead>tr>th {
+    padding: 1px!important;
+  }
+.table-res, .table-res > thead > tr > th, .table-res > tbody > tr > th, .table-res > tbody > tr, .table-res > tfoot > tr > th, .table-res > thead > tr > td, .table-res > tbody > tr > td, .table-res > tfoot > tr > td {
+  font-size: 1em;
+  color: #4a7940;
+  border-top: none !important;
+  /*margin-left: 25%;*/
+}
+.table-res > tbody > tr > th{
+    font-weight: 1000 !important;
+  }
+
+.reservationimage {
+    border-radius: 20px;
+    border: 1px solid #e0e0e0;
+  }
+
 .tab-content > .active {
   display: block;
   visibility: visible;
@@ -785,6 +885,13 @@ ol {
 h2.typoh2{
     margin: 0 0 10px;
 }
+
+
+
+
+
+
+
 @media (max-width:768px){
 	.grid_5 {
 		padding: 0 0 1em;
@@ -793,6 +900,13 @@ h2.typoh2{
 		margin-bottom: 0em;
 	}
 }
+
+
+
+
+
+
+
 @media (max-width:640px){
 	h1, .h1, h2, .h2, h3, .h3 {
 		margin-top: 0px;
@@ -819,6 +933,13 @@ h2.typoh2{
 		font-size: 1.5em;
 	}
 }
+
+
+
+
+
+
+
 @media (max-width:480px){
 	.table h1 {
 		font-size: 26px;
@@ -839,6 +960,13 @@ h2.typoh2{
 		margin: 20px 0 0px;
 	}
 }
+
+
+
+
+
+
+
 @media (max-width: 320px){
 	.grid_4 {
 		margin-top: 18px;
@@ -890,6 +1018,13 @@ h2.typoh2{
         min-height: 602px;
     }
 }
+
+
+
+
+
+
+
 @media (max-width:1080px){
     .header {
         min-height: 486px;
@@ -913,6 +1048,11 @@ h2.typoh2{
         font-size: 0.96em;
     }
 }
+
+
+
+
+
 
 
 @media (max-width:991px){
@@ -1044,6 +1184,13 @@ h2.typoh2{
         font-size: 0.95em;
     }
 }
+
+
+
+
+
+
+
 @media (max-width:640px){
     .navbar-nav {
         float: none;
@@ -1077,6 +1224,14 @@ h2.typoh2{
     }
     .navbar-toggler-icon {
         background-color: #5ab645;
+    }
+    .content > .contact > .container h2{
+        font-size: 2.5em;
+        text-transform: capitalize;
+        font-family: 'Rancho', cursive;
+        /**color: #222;*/
+        color: #4a7940;
+        /**margin-bottom: 0.35em;**/
     }
     .header-top {
         padding: 1em 0;
@@ -1176,9 +1331,16 @@ h2.typoh2{
     }
     .contact-right input[type="submit"] {
         font-size: 0.92em;
-        width: 25%;
+        width: 20em;
     }
 }
+
+
+
+
+
+
+
 @media (max-width:480px){
     .header {
         background: url(../images/hotelfront.jpg) no-repeat 0px 0px;
@@ -1247,16 +1409,31 @@ h2.typoh2{
     }
     .contact-right {
         width: 100%;
-    margin-top: 1em;
+        margin-top: 1em;
+    }
+    .content > .contact > .container h2{
+        font-size: 2em;
+        text-transform: capitalize;
+        font-family: 'Rancho', cursive;
+        /**color: #222;*/
+        color: #4a7940;
+        /**margin-bottom: 0.5em;**/
+        /**margin-bottom: 0.25em;**/
     }
     .contact-right input[type="text"], .contact-right textarea {
         padding: 4px 10px;
     }
     .contact-right input[type="submit"] {
         font-size: 0.9em;
-        width: 20%;
+        width: 20em;
     }
 }
+
+
+
+
+
+
 @media (max-width:320px){
     .header-top {
         padding: 0;
@@ -1358,7 +1535,16 @@ h2.typoh2{
     }
     .contact-right input[type="submit"] {
         font-size: 0.9em;
-        width: 24%;
+        width: 20em;
+    }
+    .content > .contact > .container h2{
+        font-size: 1.5em;
+        text-transform: capitalize;
+        font-family: 'Rancho', cursive;
+        /**color: #222;*/
+        color: #4a7940;
+        /**margin-bottom: 0.5em;**/
+        /**margin-bottom: 0.15em;**/
     }
 }
 /** -------------finresponsive------------------**/

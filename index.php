@@ -35,6 +35,33 @@
         <div class="header">
             <div class="container">
                 <?php include_once('includephp/header.php');?>
+		            <div class="slider">
+                        <div id="carouselRoomcategoryControls" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <?php 
+                                    $firstimage = true;
+                                    $roomcategorySQL="SELECT * from roomcategory"; //-------- Requêtes sql pour recuperer toutes les enregistrement depuis la table "roomcategory" -------// INNER join room on roomcategory.ID=room.RoomType 
+                                    $roomcategoryQuery = $dbh -> prepare($roomcategorySQL);
+                                    $roomcategoryQuery->execute();
+                                    $roomcategorys=$roomcategoryQuery->fetchAll(PDO::FETCH_OBJ); 
+                                    $roomCategoryCount=sizeof($roomcategorys);
+                                    foreach($roomcategorys as $roomcategory) //-------- to fill the drop down bar with all the category, so that un user can choose a room category that he wants -------//
+                                    {    
+                                        if ($firstimage){echo '<div class="carousel-item active">';$firstimage=false;}else{echo '<div class="carousel-item">';} ?>
+                                            <img width="700px; height=400px;" class="d-block w-100" src="admin/images/<?php echo $roomcategory->Image;?>" alt="<?php echo $roomcategory->CategoryName;?>">
+                                        </div>   <?php  
+                                    }; ?>
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselRoomcategoryControls" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#carouselRoomcategoryControls" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                    </button>
+                            </div>
+                        </div>
+                    </div>
                 <!--
                 <section id="salledesport">
                     <div class="row" style ="color : #4a7940; font-weight: bold; opacity: 7.5;">

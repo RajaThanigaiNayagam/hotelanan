@@ -5,6 +5,7 @@ error_reporting(0);   //Désactiver tous les rapports d'erreurs
 //  apper le fichier  includephp/connectiondb.php
 include('includephp/connectionbd.php');
 
+$cdate=date('Y-m-d');
 if (strlen($_SESSION['hotelanan']==0)) {
   	header('location:logout.php');
 } else{
@@ -19,7 +20,6 @@ if (strlen($_SESSION['hotelanan']==0)) {
 		$checkindate=$_POST['checkindate'];
 		$checkoutdate=$_POST['checkoutdate'];
 		//echo '<script>alert("test1 svp...")</script>';
-		$cdate=date('Y-m-d');
 		if($checkindate <  $cdate){
 			echo '<script>alert("La date d\'arrivée doit être supérieure à la date actuelle")</script>';
 		} else if($checkindate > $checkoutdate){
@@ -113,11 +113,11 @@ if (strlen($_SESSION['hotelanan']==0)) {
 									<p style="text-align: left;"> <input type="radio"  name="gender" id="gender" value="Female" checked="true">féminin</p>
 									<p style="text-align: left;"> <input type="radio" name="gender" id="gender" value="Male">masculin</p>
 									<h5>Adresse</h5>
-									<textarea type="text" rows="10" name="address" required="true"></textarea>
+									<textarea type="text" rows="3" name="address" required="true"></textarea>
 									<h5>Date d'arrivée</h5>
-									<input  type="date" value="" class="form-control" name="checkindate" required="true">
+									<input  type="date" value="" class="form-control" name="checkindate" min="<?php echo $cdate;?>" required="true">
 									<h5>Date de départ</h5>
-									<input  type="date" value="" class="form-control" name="checkoutdate" required="true">
+									<input  type="date" value="" class="form-control" name="checkoutdate" min="<?php echo $cdate;?>" required="true">
 									<input type="submit" value="Envoyer" name="submit">
 								</form>
 							</div>

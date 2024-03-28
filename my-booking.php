@@ -49,13 +49,14 @@
 							<table class="table table-bordered">
 								<thead>
 									<tr>
-										<th>#</th>
+										<th style="text-align: center;">#</th>
 										<th>Numéro de réservation</th>
-										<th>Nom</th>
+										<th style="text-align: center;">Nom</th>
 										<th>Numéro de portable</th>
-										<th>Adress Email</th>
-										<th>Status</th>
-										<th>Action</th>
+										<th style="text-align: center;">Adress Email</th>
+										<th style="text-align: center;">Status</th>
+										<th style="text-align: center;">Action</th>
+										<th style="text-align: center;">Action</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -81,15 +82,16 @@
 													<td><?php  echo htmlentities($row->Email);?></td>
 													<?php if($row->Status=="")
 													{ ?>
-														<td><?php echo "Toujours en attente"; ?></td>
+														<td style="text-align: center;"><?php echo "Toujours en attente"; ?></td>
 													<?php } else { ?> 
-									                 	<td><?php  echo htmlentities($row->Status);?></td>
+									                 	<td style="text-align: center;"><?php  echo htmlentities($row->Status);?></td>
 													<?php } ?>
 													<?php if($row->Status=="approuvée") { ?>
-														<td><a href="view-application-detail.php?viewid=<?php echo htmlentities ($row->bid);?>" class="btn btn-danger">Voir les détails</a></td>
+														<td style="text-align: center;"><a href="view-application-detail.php?viewid=<?php echo htmlentities ($row->bid);?>" class="btn btn-primary">Voir les détails</a></td>
 													<?php } else { ?> 
-									                 	<td><?php  echo "Toujours en attente";?></td>
+									                 	<td style="text-align: center;"><?php  echo "Toujours en attente";?></td>
 													<?php } ?>
+													<td style="text-align: center;"><a href="delete.php?delete=deletebooking&deletebookingid=<?php echo htmlentities ($row->bid);?>" onclick="return confirm('Etes-vous sûr que vous voulez supprimer?')" class="btn btn-danger">Supprimer</a></td>
 												</tr>
 												<?php $cnt=$cnt+1;
 											}

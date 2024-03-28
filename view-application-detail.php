@@ -41,15 +41,21 @@ header('location:logout.php');
                 <!-- container-wrap -->
                 <div class="container">
                     <div class="typography-info">
+                        <a href="#" onclick="history.back()"><img SRC="images/backward.png">Retour</a>
                         <h2 class="type">Détails de ma réservation d'hôtel</h2>
                     </div>
                     <div class="bs-docs-example">
                         <?php
                         $vid=$_GET['viewid'];
-                        $sql="SELECT booking.BookingNumber,user.FullName,user.MobileNumber,user.Email,booking.ID as tid,booking.IDType,booking.Gender,booking.Address,booking.CheckinDate,booking.CheckoutDate,booking.BookingDate,booking.Remark,booking.Status,booking.UpdationDate,roomcategory.CategoryName,roomcategory.Description,roomcategory.Price,room.RoomName,room.MaxAdult,room.MaxChild,room.RoomDesc,room.NoofBed,room.Image,room.RoomFacility 
+                        /*$sql="SELECT booking.BookingNumber,user.FullName,user.MobileNumber,user.Email,booking.ID as tid,booking.IDType,booking.Gender,booking.Address,booking.CheckinDate,booking.CheckoutDate,booking.BookingDate,booking.Remark,booking.Status,booking.UpdationDate,roomcategory.CategoryName,roomcategory.Description,roomcategory.Price,room.RoomName,room.MaxAdult,room.MaxChild,room.RoomDesc,room.NoofBed,room.Image,room.RoomFacility 
                         from booking 
-                        join room on booking.RoomId=room.ID 
+                        join roombooking on roombooking.BookingID=booking.ID 
+                        join room on roombooking.roomID=room.ID 
                         join roomcategory on roomcategory.ID=room.RoomType 
+                        join user on booking.UserID=user.ID  
+                        where booking.ID=:vid";*/
+                        $sql="SELECT DATEDIFF(booking.CheckoutDate,booking.CheckinDate) as ddf,booking.BookingNumber,user.FullName,user.MobileNumber,user.Email,booking.ID as tid,booking.IDType,booking.Gender,booking.Address,booking.CheckinDate,booking.CheckoutDate,booking.BookingDate,booking.Remark,booking.Status,booking.UpdationDate
+                        from booking 
                         join user on booking.UserID=user.ID  
                         where booking.ID=:vid";
                         $query = $dbh -> prepare($sql);
@@ -58,17 +64,19 @@ header('location:logout.php');
                         $results=$query->fetchAll(PDO::FETCH_OBJ);
                         $cnt=1;
                         if($query->rowCount() > 0)
-                        {
+                        {    
                             foreach($results as $row)
-                            {               ?>
+                            {          ?>
                                 <table border="1" class="table table-bordered table-striped table-vcenter js-dataTable-full-pagination">
-                                    <tr><th colspan="4" style="color: red;font-weight: bold;text-align: center;font-size: 20px"> Numéro de réservation: <?php echo $row->BookingNumber;?></th></tr>
-                                    <tr><th colspan="4" style="color: blue;font-weight: bold;font-size: 15px"> Détail de la réservation:</th></tr>
+                                    <tr><th colspan="4" style="color: red;font-weight: bold;text-align: center;font-size: 25px"> Numéro de réservation: <?php echo $row->BookingNumber;?></th></tr>
+                                    <tr><th colspan="4" style="color: blue;font-weight: bold;font-size: 20px"> Détail de la réservation:</th></tr>
                                     <tr>
                                         <th>Nom du client</th>
                                         <td><?php  echo $row->FullName;?></td>
                                         <th>Numéro de portable</th>
                                         <td><?php  echo $row->MobileNumber;?></td>
+                                        <th>Date de réservation</th>
+                                        <td><?php  echo $row->BookingDate;?></td>
                                     </tr>
                                     <tr>
                                         <th>E-mail</th>
@@ -88,68 +96,92 @@ header('location:logout.php');
                                         <th>Date de départ</th>
                                         <td><?php  echo $row->CheckoutDate;?></td>
                                     </tr>
+                                            
+                                                
+                                    <?php
+                                    $roomcategorySQL="SELECT roombooking.ID as rbid,roombooking.Quantity,roomcategory.CategoryName,roomcategory.Description,roomcategory.Price,room.RoomName,room.MaxAdult,room.MaxChild,room.RoomDesc,room.NoofBed,room.Image,room.RoomFacility 
+                                    from roombooking 
+                                    join room on roombooking.RoomId=room.ID 
+                                    join roomcategory on roomcategory.ID=room.RoomType 
+                                    where roombooking.BookingID=:vid";
+                                    $roomcategoryquery = $dbh -> prepare($roomcategorySQL);
+                                    $roomcategoryquery-> bindParam(':vid', $vid, PDO::PARAM_STR);
+                                    $roomcategoryquery->execute();
+                                    $roomcategoryresults=$roomcategoryquery->fetchAll(PDO::FETCH_OBJ);
+                                    if($roomcategoryquery->rowCount() > 0)
+                                    {   ?>  
+                                        <tr><th colspan="4" style="color: blue;font-weight: bold;font-size: 20px"> Détail de la pièce:</th></tr>
+                                        <tr>
+                                            <th>Photo de chambre</th>
+                                            <th>Type de chambre</th>
+                                            <th>Nom de la chambre</th>
+                                            <th>Adulte max</th>
+                                            <th>Enfant maximum</th>
+                                            <!--<th>Nombre de lit</th>-->
+                                            <th>nombre de jours</th>
+                                            <th>nombre de chambres</th>
+                                            <th>Prix (par jour)</th>
+                                            <th>Prix Total</th>
+                                        </tr>
+                                        <?php      
+                                        foreach($roomcategoryresults as $RCBrow)
+                                        {   ?>    
+                                            <tr>
+                                                <td rowspan="2"><img src="admin/images/<?php echo $RCBrow->Image;?>" class="reservationimage" width="160" height="100" value="<?php  echo $RCBrow->Image;?>"></td>
+                                                <td><?php  echo $RCBrow->CategoryName;?></td>
+                                                <td><?php  echo $RCBrow->RoomName;?></td>
+                                                <td><?php  echo $RCBrow->MaxAdult;?></td>
+                                                <td><?php  echo $RCBrow->MaxChild;?></td>
+                                                <td><?php  echo $ddf=$row->ddf;?></td>
+                                                <td><?php  echo $qty= $RCBrow->Quantity;?></td>
+                                                <td>€<?php  echo $tp= $RCBrow->Price;?></td>
+                                                <td>€<?php  echo $total=$ddf*$qty*$tp;?></td>
+												<td style="text-align: center;"><a href="delete.php?delete=deleteroombooking&deleteroombookingid=<?php echo htmlentities ($RCBrow->rbid);?>" onclick="return confirm('Etes-vous sûr que vous voulez supprimer?')" class="btn btn-danger">Supprimer</a></td>
+                                            </tr>
+                                            <tr>
+                                                <th>Description de la chambre</th>
+                                                <td colspan="5" style="width:6em;"><?php  echo $RCBrow->RoomDesc;?></td>
+                                                <td></td>
+                                            </tr>
+                                            <?php $grandtotal+=$total;
+                                        }
+                                    } ?>
                                     <tr>
-                                        <tr><th colspan="4" style="color: blue;font-weight: bold;font-size: 15px"> Détail de la pièce:</th></tr>
-                                        <th>Type de chambre</th>
-                                        <td><?php  echo $row->CategoryName;?></td>
-                                        <th>Prix ​​de la chambre (par jour)</th>
-                                        <td>$<?php  echo $row->Price;?></td>
-                                    </tr>
-                                    <tr>
-                                        <th>Nom de la chambre</th>
-                                        <td><?php  echo $row->RoomName;?></td>
-                                        <th>Description de la chambre</th>
-                                        <td><?php  echo $row->RoomDesc;?></td>
-                                    </tr>
-                                    <tr>
-                                        <th>Adulte maximum</th>
-                                        <td><?php  echo $row->MaxAdult;?></td>
-                                        <th>Enfant maximum</th>
-                                        <td><?php  echo $row->MaxChild;?></td>
-                                    </tr>
-                                    <tr>
-                                        <th>Nombre de lit</th>
-                                        <td><?php  echo $row->NoofBed;?></td>
-                                        <th>Photo de chambre</th>
-                                        <td><img src="admin/images/<?php echo $row->Image;?>" width="100" height="100" value="<?php  echo $row->Image;?>"></td>
-                                    </tr>
-                                    <tr>
-                                        <th></th>
-                                        <td></td>
-                                        <th>Date de réservation</th>
-                                        <td><?php  echo $row->BookingDate;?></td>
-                                    </tr>
-                                    <tr>
-                                        <th colspan="4" style="color: blue;font-weight: bold;font-size: 15px"> Admin Remarks:</th>
-                                    </tr>
-                                    <tr>
-                                        <th>État final de la commande</th>
-                                        <td> <?php  $status=$row->Status;
-                                            if($row->Status=="Approved")
-                                            {
-                                                echo "Your Booking has been approved";
-                                            }
-                                            if($row->Status=="Cancelled")
-                                            {
-                                            echo "Your Booking has been cancelled";
-                                            }
-                                            if($row->Status=="")
-                                            {
-                                                echo "Not Response Yet";
-                                            };?>
-                                        </td>
-                                        <th>Remarque de l'administrateur</th>
-                                            <?php if($row->Status==""){ ?>
-                                                <td><?php echo "Not Updated Yet"; ?></td>
-                                            <?php } else { ?>                  
-                                                <td><?php  echo htmlentities($row->Status);?></td>
-                                            <?php } ?>
-                                    </tr>
-                                    <?php $cnt=$cnt+1;
-                            }
-                        } ?>
+                                    <th colspan="7" style="color: blue;font-weight: bold;font-size: 15px; width:2em;"> Admin Remarks:</th>
+                                    <th style="text-align:center;color: blue">Total </th>
+                                    <td style="text-align: center;"><?php  echo $grandtotal;?></td>
+                                </tr>
+                                <tr>
+                                    <th>État final de la commande</th>
+                                    <td> <?php  $status=$row->Status;
+                                        if($row->Status=="approuvée")
+                                        {
+                                            echo "Votre réservation a été approuvée";
+                                        }
+                                        if($row->Status=="Cancelled")
+                                        {
+                                            echo "Votre réservation a été annulée";
+                                        }
+                                        if($row->Status=="")
+                                        {
+                                            echo "Pas encore de réponse";
+                                        };?>
+                                    </td>
+                                    <th>Remarque de l'administrateur</th>
+                                        <?php if($row->Status==""){ ?>
+                                            <td><?php echo "Pas encore mis à jour"; ?></td>
+                                        <?php } else { ?>                  
+                                            <td><?php  echo htmlentities($row->Status);?></td>
+                                        <?php } ?>
+                                </tr><?php
+                            } ?>
                                 </table> 
-                        <a href="invoice.php?invid=<?php echo htmlentities ($row->tid);?>" class="btn btn-success">Facture</a>
+                                <a href="invoice.php?invid=<?php echo htmlentities ($row->tid);?>" class="btn btn-success">Facture</a>
+                        <?php } else {?>
+                            <div class="typography-info">
+                                <h2 class="type"> Il n'y a pas de détails pour cette réservation</h2>
+                            </div>
+                        <?php } ?>
                     </div>
                 </div>
                   <!-- //container-wrap -->
@@ -161,4 +193,4 @@ header('location:logout.php');
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
         </body>
     </html>
-<?php }?>
+<?php }?> 

@@ -7,7 +7,7 @@ include('includephp/connectionbd.php');
 
 if (strlen($_SESSION['hotelanan']==0)) {
       header('location:logout.php');
-} else{?>
+} else {?>
     <!DOCTYPE HTML>
     <html>
         <head>
@@ -41,17 +41,25 @@ if (strlen($_SESSION['hotelanan']==0)) {
             <div class="typography">
                 <!-- container-wrap -->
                 <div class="container">
-                    <div class="typography-info"><h2 class="type">Facture</h2></div>
+                    <div class="typography-info">
+                        <a href="#" onclick="history.back()"><img SRC="images/backward.png">Retour</a>
+                        <h2 class="type">Facture</h2>
+                    </div>
                     <p>Détails de ma réservation d'hôtel</p>
                     <div class="bs-docs-example">
                         <?php
                             $invid=$_GET['invid'];
-                            $sql="SELECT booking.BookingNumber,user.FullName,DATEDIFF(booking.CheckoutDate,booking.CheckinDate) as ddf,user.MobileNumber,user.Email,booking.IDType,booking.Gender,booking.Address,booking.CheckinDate,booking.CheckoutDate,booking.BookingDate,booking.Remark,booking.Status,booking.UpdationDate,roomcategory.CategoryName,roomcategory.Description,roomcategory.Price,room.RoomName,room.MaxAdult,room.MaxChild,room.RoomDesc,room.NoofBed,room.Image,room.RoomFacility 
+                            /*$sql="SELECT booking.BookingNumber,user.FullName,DATEDIFF(booking.CheckoutDate,booking.CheckinDate) as ddf,user.MobileNumber,user.Email,booking.IDType,booking.Gender,booking.Address,booking.CheckinDate,booking.CheckoutDate,booking.BookingDate,booking.Remark,booking.Status,booking.UpdationDate,roomcategory.CategoryName,roomcategory.Description,roomcategory.Price,room.RoomName,room.MaxAdult,room.MaxChild,room.RoomDesc,room.NoofBed,room.Image,room.RoomFacility 
                             from booking 
-                            join room on booking.RoomId=room.ID 
+                            join roombooking on roombooking.BookingID=booking.ID 
+                            join room on roombooking.roomID=room.ID 
                             join roomcategory on roomcategory.ID=room.RoomType 
                             join user on booking.UserID=user.ID  
-                            where booking.ID=:invid";//booking.Status='approuvée'
+                            where booking.ID=:invid";//booking.Status='approuvée'*/
+                            $sql="SELECT booking.BookingNumber,user.FullName,user.MobileNumber,user.Email,booking.IDType,booking.Gender,booking.Address,booking.CheckinDate,booking.CheckoutDate,booking.BookingDate,booking.Remark,booking.Status,booking.UpdationDate 
+                            from booking 
+                            join user on booking.UserID=user.ID  
+                            where booking.ID=:invid";
                             $query = $dbh -> prepare($sql);
                             $query-> bindParam(':invid', $invid, PDO::PARAM_STR);
                             $query->execute();
@@ -73,45 +81,61 @@ if (strlen($_SESSION['hotelanan']==0)) {
                                             <th>Jour de reservation </th>
                                             <td colspan="2"><?php  echo $row->BookingDate;?></td>
                                         </tr>
-                                        <tr>
-                                            <th>Type de chambre</th>
-                                            <td><?php  echo $row->CategoryName;?></td>
-                                            <th></th>
-                                            <td><img src="admin/images/<?php echo $row->Image;?>" width="100" height="100" value="<?php  echo $row->Image;?>"></td>
-                                        </tr>
-                                        <tr>
-                                            <th>Prix d'une chambre(perjour)</th>
-                                            <td>$<?php  echo $row->Price;?></td>
-                                            <th>Nombre total des jours</th>
-                                            <td colspan="2"><?php  echo $row->ddf;?></td>
-                                        </tr>
-                                        <table border="1" class="table table-bordered table-striped table-vcenter js-dataTable-full-pagination">
-                                            <tr><th colspan="5" style="text-align: center;color: red;font-size: 20px">Detail de la facture</th></tr>
-                                            <tr>
-                                                <th style="text-align: center;">Total d'aujourd'hui</th>
-                                                <th style="text-align: center;">Prix du chambre</th>
-                                                <th style="text-align: center;">Prix Total</th>
-                                            </tr>
-                                            <tr>
-                                                <td style="text-align: center;"><?php  echo $ddf=$row->ddf;?></td>
-                                                <td style="text-align: center;"><?php  echo $tp= $row->Price;?></td>
-                                                <td style="text-align: center;"><?php  echo $total= $ddf*$tp;?></td>
-                                            </tr>
-                                            <?php 
-                                            $grandtotal+=$total;
-                                            $cnt=$cnt+1;
-                                            } ?>
-                                            <tr>
-                                              <th colspan="2" style="text-align:center;color: blue">Total </th>
-                                            <td colspan="2" style="text-align: center;"><?php  echo $grandtotal;?></td>
-                                            </tr>
-                                            
-                                            <?php $cnt=$cnt+1;
+
+                                        <?php
+                                        $roomcategorySQL="SELECT DATEDIFF(booking.CheckoutDate,booking.CheckinDate) as ddf,roombooking.Quantity,roomcategory.CategoryName,roomcategory.Description,roomcategory.Price,room.RoomName,room.MaxAdult,room.MaxChild,room.RoomDesc,room.NoofBed,room.Image,room.RoomFacility 
+                                        from booking 
+                                        join roombooking on booking.ID=roombooking.BookingID
+                                        join room on roombooking.roomID=room.ID 
+                                        join roomcategory on roomcategory.ID=room.RoomType 
+                                        where roombooking.BookingID=:vid";
+                                        $roomcategoryquery = $dbh -> prepare($roomcategorySQL);
+                                        $roomcategoryquery-> bindParam(':vid', $invid, PDO::PARAM_STR);
+                                        $roomcategoryquery->execute();
+                                        $roomcategoryresults=$roomcategoryquery->fetchAll(PDO::FETCH_OBJ);
+                                        if($roomcategoryquery->rowCount() > 0)
+                                        {?> 
+                                            <table border="1" class="table table-bordered table-striped table-vcenter js-dataTable-full-pagination">
+                                                <tr><th colspan="5" style="text-align: center;color: red;font-size: 20px">Detail de la facture</th></tr>
+                                                
+                                                <tr>
+                                                    <th style="text-align: center;">Type de chambre</th>
+                                                    <th style="text-align: center;">Prix parjour</th>
+                                                    <th style="text-align: center;">Nombre des jours</th>
+                                                    <th style="text-align: center;">Quantité par jour</th>
+                                                    <th style="text-align: center;">Prix du chambre</th>
+                                                    <th style="text-align: center;">Prix Total</th>
+                                                    <!--<td><img src="admin/images/<?php echo $RCBrow->Image;?>" width="100" height="100" value="<?php  echo $row->Image;?>"></td>-->
+                                                </tr>
+                                                <?php     
+                                                foreach($roomcategoryresults as $RCBrow)
+                                                {   ?>    
+                                                        <tr>
+                                                            <td style="text-align: center;"><?php  echo $RCBrow->CategoryName;?></td>
+                                                            <td style="text-align: center;"><?php  echo $RCBrow->Price;?></td>
+                                                            <td style="text-align: center;"><?php  echo $ddf=$RCBrow->ddf;?></td>
+                                                            <td style="text-align: center;"><?php  echo $qty= $RCBrow->Quantity;?></td>
+                                                            <td style="text-align: center;"><?php  echo $tp= $RCBrow->Price;?></td>
+                                                            <td style="text-align: center;"><?php  echo $total=$ddf*$qty*$tp;?></td>
+                                                        </tr>
+                                                        <?php 
+                                                        $grandtotal+=$total;
+                                                } ?>
+                                                <tr>
+                                                    <td style="text-align: center;"></td>
+                                                    <td style="text-align: center;"></td>
+                                                    <td style="text-align: center;"></td>
+                                                    <td style="text-align: center;"></td>
+                                                    <th style="text-align:center;color: blue">Total </th>
+                                                    <td style="text-align: center;"><?php  echo $grandtotal;?></td>
+                                                </tr>
+                                            </table> <?php
+                                        }?>
+                                    </table><?php
+                                }    
                             } ?>
-                                        </table>
-                                    </table> 
                             <p style="text-align: center;font-size: 20px">
-                            <input name="Submit2" type="submit" class="btn btn-success" style="color: red;font-size: 20px" value="Print" onClick="return f3();" style="cursor: pointer;"  /></p>
+                            <input name="Submit2" type="submit" class="btn btn-success" style="color: red;font-size: 20px" value="Imprimer" onClick="return f3();" style="cursor: pointer;"  /></p>
                     </div>
                 </div>
                 <!-- //container-wrap -->

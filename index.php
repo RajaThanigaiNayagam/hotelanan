@@ -48,7 +48,7 @@
                                     foreach($roomcategorys as $roomcategory) //-------- to fill the drop down bar with all the category, so that un user can choose a room category that he wants -------//
                                     {    
                                         if ($firstimage){echo '<div class="carousel-item active">';$firstimage=false;}else{echo '<div class="carousel-item">';} ?>
-                                            <img width="700px; height=400px;" class="d-block w-100" src="admin/images/<?php echo $roomcategory->Image;?>" alt="<?php echo $roomcategory->CategoryName;?>">
+                                            <img width="1640" height="320" class="d-block w-100" src="admin/images/<?php echo $roomcategory->Image;?>" alt="<?php echo $roomcategory->CategoryName;?>">
                                         </div>   <?php  
                                     }; ?>
                                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselRoomcategoryControls" data-bs-slide="prev">

@@ -162,11 +162,11 @@ input[type="button"]{
 
 
 .slider {
-	position: relative;
+	/*position: relative;
 	text-align: center;
-	/*width: 400px;
+	width: 400px;
     height: 400px;*/
-    margin: 10% 25% 0;
+    margin: 25% 25% 0;
 }
 /** ------------------------Footer section------------------------- */
 .footer-section{

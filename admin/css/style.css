@@ -755,7 +755,7 @@ fieldset#body {
     float:left;
     padding:0;
     border:0;
-    *margin:-3px 9px 0 0; /* IE7 Fix */
+    margin:-3px 9px 0 0; /* IE7 Fix */
 }
 #body label {
     color:#000;

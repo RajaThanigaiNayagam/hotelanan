@@ -18,9 +18,15 @@
 	<meta name="author" content="RAJA Thanigai Nayagam">
     
 	<!-- --------------------------- appel jquery --------------------------------- -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script><!-- -------------------------appel POLICE RANCHO------------------------------ -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>-->
 	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 	
+    
+	<!-- ------------------------ responsive Flexisel ----------------------------- -->
+    <script type="text/javascript" src="js/jquery.flexisel.js"></script>
+	<!-- ------------------------ responsive Flexisel ----------------------------- -->
+
 	<!-- -------------------------appel POLICE RANCHO------------------------------ -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,7 +54,7 @@
                                     foreach($roomcategorys as $roomcategory) //-------- to fill the drop down bar with all the category, so that un user can choose a room category that he wants -------//
                                     {    
                                         if ($firstimage){echo '<div class="carousel-item active">';$firstimage=false;}else{echo '<div class="carousel-item">';} ?>
-                                            <img width="1640" height="320" class="d-block w-100" src="admin/images/<?php echo $roomcategory->Image;?>" alt="<?php echo $roomcategory->CategoryName;?>">
+                                            <img height="250vh" class="d-block w-100" src="admin/images/<?php echo $roomcategory->Image;?>" alt="<?php echo $roomcategory->CategoryName;?>">
                                         </div>   <?php  
                                     }; ?>
                                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselRoomcategoryControls" data-bs-slide="prev">
@@ -77,6 +83,44 @@
             </div>
         </div>
         <!--header-->
+    
+    <div class="clearout"></div>
+    <!-- slider -->		 
+			 <ul id="flexiselDemo1">
+				 <li> <a href="index.php"><img src="images/s1.jpg" alt=""/>  </a> </li>
+				 <li> <a href="index.php"><img src="images/s2.jpg" alt=""/>  </a> </li>
+				 <li> <a href="index.php"><img src="images/s3.jpg" alt=""/>  </a> </li>
+				 <li> <a href="index.php"><img src="images/s4.jpg" alt=""/>	 </a> </li>
+				 <li> <a href="index.php"><img src="images/s5.jpg" alt=""/>  </a> </li>
+				 <li> <a href="index.php"><img src="images/s6.jpg" alt=""/>  </a> </li>
+			</ul>
+			<script type="text/javascript">
+				 $(window).load(function() {			
+                    $("#flexiselDemo1").flexisel({
+                        visibleItems: 4,
+                        animationSpeed: 200,
+                        autoPlay: true,
+                        autoPlaySpeed: 2000,    		
+                        pauseOnHover:true,
+                        enableResponsiveBreakpoints: true,
+                        responsiveBreakpoints: { 
+                            portrait: { 
+                                changePoint:480,
+                                visibleItems: 1
+                            }, 
+                            landscape: { 
+                                changePoint:640,
+                                visibleItems: 2
+                            },
+                            tablet: { 
+                                changePoint:768,
+                                visibleItems: 3
+                            }
+                        }
+                    });
+				});
+            </script>
+	<!-- //slider -->
 
         <!--footer-->
         <?php include_once('includephp/footer.php');?>

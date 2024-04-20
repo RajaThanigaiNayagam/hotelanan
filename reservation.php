@@ -209,7 +209,8 @@ if (strlen($_SESSION['hotelanan']==0)) {
 																if($datechoosed == 'YES'){
 																	$roomid=$rows->ID;
 																	$totRoom = intval($rows->RoomsAvail); 
-																	var_dump($totRoom);
+																	var_dump($roomid); 
+																	var_dump(date('Y-m-d', strtotime(booking.CheckoutDate .' -1 day')));
 																	foreach($Reservationdates as $Reservationdate){
 																		$ret="SELECT SUM(roombooking.Quantity) as qty from roombooking 
 																		join booking on roombooking.BookingID=booking.ID 

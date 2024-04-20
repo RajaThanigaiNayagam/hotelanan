@@ -220,6 +220,7 @@ if (strlen($_SESSION['hotelanan']==0)) {
 																		$query1-> bindParam(':roomid', $roomid, PDO::PARAM_STR);
 																		$query1-> bindParam(':ReservDate', $Reservationdate, PDO::PARAM_STR);
 																		$query1->execute();
+																		var_dump($query1); 
 																		$replyquery=$query1->fetchAll(PDO::FETCH_OBJ); 
 																		var_dump($replyquery); 
 																		foreach($replyquery as $result){   

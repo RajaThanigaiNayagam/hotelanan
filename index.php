@@ -62,8 +62,8 @@
                                     <span class="visually-hidden">Previous</span>
                                     </button>
                                     <button class="carousel-control-next" type="button" data-bs-target="#carouselRoomcategoryControls" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Next</span>
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
                                     </button>
                             </div>
                         </div>
@@ -121,6 +121,17 @@
 				});
             </script>
 	<!-- //slider -->
+        <script>
+            const heightOutput = document.querySelector("#height");
+            const widthOutput = document.querySelector("#width");
+
+            function reportWindowSize() {
+            heightOutput.textContent = window.innerHeight;
+            widthOutput.textContent = window.innerWidth;
+            }
+
+            window.onresize = reportWindowSize;
+        </script>
 
         <!--footer-->
         <?php include_once('includephp/footer.php');?>

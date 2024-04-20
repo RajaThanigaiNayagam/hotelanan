@@ -215,14 +215,14 @@ if (strlen($_SESSION['hotelanan']==0)) {
 																		join booking on roombooking.BookingID=booking.ID 
 																		join room on roombooking.roomID=room.ID 
 																		join roomcategory on room.RoomType=roomcategory.ID
-																		where room.ID=:roomid and :ReservDate between booking.CheckinDate and date('Y-m-d', strtotime(booking.CheckoutDate .' -1 day'))"; //-------- Requêtes sql pour recuperer toutes les enregistrement depuis la table "roomcategory" -------//
-																		var_dump($ret); 
+																		where room.ID=:roomid and :ReservDate between booking.CheckinDate and booking.CheckoutDate";  // date('Y-m-d', strtotime(booking.CheckoutDate .' -1 day'))"; //-------- Requêtes sql pour recuperer toutes les enregistrement depuis la table "roomcategory" -------//
+																		//var_dump($ret); 
 																		$query1 = $dbh -> prepare($ret);
 																		$query1-> bindParam(':roomid', $roomid, PDO::PARAM_STR);
 																		$query1-> bindParam(':ReservDate', $Reservationdate, PDO::PARAM_STR);
 																		$query1->execute();
 																		$replyquery=$query1->fetchAll(PDO::FETCH_OBJ); 
-																		var_dump($replyquery); 
+																		//var_dump($replyquery); 
 																		foreach($replyquery as $result){   
 																			if ( $totRoom > intval($result->qty) ) { $totRoom=$totRoom-intval($result->qty);  }
 																			else {  $totRoom=0;  }

@@ -193,7 +193,7 @@ if (strlen($_SESSION['hotelanan']==0)) {
 													foreach ($period as $date) {
 														$Reservationdates[] = $date->format("Y-m-d");
 													}
-													var_dump($Reservationdates);
+													//var_dump($Reservationdates);
 													/** *************************************************************************************** */
 													$ret="SELECT * from roomcategory"; //-------- Requêtes sql pour recuperer toutes les enregistrement depuis la table "roomcategory" -------// INNER join room on roomcategory.ID=room.RoomType 
 													$query1 = $dbh -> prepare($ret);
@@ -209,6 +209,7 @@ if (strlen($_SESSION['hotelanan']==0)) {
 																if($datechoosed == 'YES'){
 																	$roomid=$rows->ID;
 																	$totRoom = intval($rows->RoomsAvail); 
+																	var_dump($totRoom);
 																	foreach($Reservationdates as $Reservationdate){
 																		$ret="SELECT SUM(roombooking.Quantity) as qty from roombooking 
 																		join booking on roombooking.BookingID=booking.ID 

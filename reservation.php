@@ -214,7 +214,7 @@ if (strlen($_SESSION['hotelanan']==0)) {
 																		join booking on roombooking.BookingID=booking.ID 
 																		join room on roombooking.roomID=room.ID 
 																		join roomcategory on room.RoomType=roomcategory.ID
-																		where room.ID=:roomid and :ReservDate between booking.CheckinDate and DATEADD(day, -1, booking.CheckoutDate)"; //date(booking.CheckoutDate, strtotime(' -1 day'))"; // booking.CheckoutDate";  // date('Y-m-d', strtotime(booking.CheckoutDate .' -1 day'))"; //-------- Requêtes sql pour recuperer toutes les enregistrement depuis la table "roomcategory" -------//
+																		where room.ID=:roomid and :ReservDate between booking.CheckinDate and booking.CheckoutDate";  // date('Y-m-d', strtotime(booking.CheckoutDate .' -1 day'))"; //-------- Requêtes sql pour recuperer toutes les enregistrement depuis la table "roomcategory" -------//
 																		//var_dump($ret); 
 																		$query1 = $dbh -> prepare($ret);
 																		$query1-> bindParam(':roomid', $roomid, PDO::PARAM_STR);

@@ -220,7 +220,6 @@ if (strlen($_SESSION['hotelanan']==0)) {
 																		$query1-> bindParam(':ReservDate', $Reservationdate, PDO::PARAM_STR);
 																		$query1->execute();
 																		$replyquery=$query1->fetchAll(PDO::FETCH_OBJ); 
-																		//var_dump($replyquery); 
 																		foreach($replyquery as $result){   
 																			if ( $totRoom > intval($result->qty) ) { $totRoom=$totRoom-intval($result->qty);  }
 																			else {  $totRoom=0;  }

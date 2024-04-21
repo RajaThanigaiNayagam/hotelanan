@@ -71,14 +71,19 @@ if (strlen($_SESSION['hotelanan']==0)) {
 											</div>
 											<div class="form-body">
 												<?php
-												$bookid=$_GET['bookingid'];  //**** Récupération id de réservation. Le paramètre 'bookingid' qui vient methode POST OR GET ****
+												$bookid=$_GET['bookingid'];  //**** Récupération id de réservation. Le paramètre 'bookingid' qui vient dans le methode POST OR GET ****
 												//**** Requètte SQL qui requpère les info de TABLE  "room", "roomcategory" et "user" pour le "bookingid" donneé ****
-												$sql="SELECT booking.BookingNumber,user.FullName,user.MobileNumber,user.Email,booking.IDType,booking.Gender,booking.Address,booking.CheckinDate,booking.CheckoutDate,booking.BookingDate,booking.Remark,booking.Status,booking.UpdationDate,roomcategory.
+												/*$sql="SELECT booking.BookingNumber,user.FullName,user.MobileNumber,user.Email,booking.IDType,booking.Gender,booking.Address,booking.CheckinDate,booking.CheckoutDate,booking.BookingDate,booking.Remark,booking.Status,booking.UpdationDate,roomcategory.
 												CategoryName,roomcategory.Description,roomcategory.Price,room.RoomName,room.MaxAdult,room.MaxChild,room.RoomDesc,room.NoofBed,room.Image,room.RoomFacility 
 												from booking 
 												join room on booking.RoomId=room.ID 
 												join roomcategory on roomcategory.ID=room.RoomType 
 												join user on booking.UserID=user.ID  
+												where booking.BookingNumber=:bookid";*/
+												$sql="SELECT booking.BookingNumber,user.FullName,user.MobileNumber,user.Email,booking.IDType,booking.ID,booking.Gender,booking.Address,
+												booking.CheckinDate,booking.CheckoutDate,booking.BookingDate,booking.Remark,booking.Status,booking.UpdationDate
+												from booking 
+												join user on booking.UserID=user.ID 
 												where booking.BookingNumber=:bookid";
 												$query = $dbh -> prepare($sql);
 												$query-> bindParam(':bookid', $bookid, PDO::PARAM_STR);
@@ -118,36 +123,59 @@ if (strlen($_SESSION['hotelanan']==0)) {
 																<th>Date d'arrivée</th>
 																<td><?php  echo $row->CheckinDate;?></td>
 																<th>Date de départ</th>
-																<td><?php  echo $row->CheckoutDate;?></td>
+                                        						<?php $checkoutdatePlusun = date('Y-m-d', strtotime($row->CheckoutDate .' +1 day'));?>
+																<td><?php  echo $checkoutdatePlusun;?></td>
 															</tr>
 															<tr>
-																<tr>
-																	<th colspan="4" style="color: blue;font-weight: bold;font-size: 15px">Détail de la pièce:</th>
-																</tr>
-																<th>Type de chambre</th>
-																<td><?php  echo $row->CategoryName;?></td>
-																<th>Prix ​​de la chambre (par jour)</th>
-																<td>$<?php  echo $row->Price;?></td>
-															</tr>
-															<tr>
-																<th>Room Name</th>
-																<td><?php  echo $row->RoomName;?></td>
-																<th>Nom de la chambre</th>
-																<td><?php  echo $row->RoomDesc;?></td>
-															</tr>
-															<tr>
-																
-																<th>Adulte maximum</th>
-																<td><?php  echo $row->MaxAdult;?></td>
-																<th>Enfant maximum</th>
-																<td><?php  echo $row->MaxChild;?></td>
-															</tr>
-															<tr>
-																
-																<th>Nombre de lit</th>
-																<td><?php  echo $row->NoofBed;?></td>
-																<th>Photos de la chambre</th>
-																<td><img src="images/<?php echo $row->Image;?>" width="100" height="100" value="<?php  echo $row->Image;?>"></td>
+																<?php 
+																$roombookingid = $row->ID;
+																//var_dump($roombookingid);
+																$roomcategorySQL="SELECT (DATEDIFF(booking.CheckoutDate,booking.CheckinDate)+1) as ddf,roombooking.Quantity,roomcategory.CategoryName,roomcategory.Description,roomcategory.Price,room.RoomName,room.MaxAdult,room.MaxChild,room.RoomDesc,room.NoofBed,room.Image,room.RoomFacility 
+																from booking 
+                                        						join roombooking on booking.ID=roombooking.BookingID
+																join room on roombooking.roomID=room.ID 
+																join roomcategory on roomcategory.ID=room.RoomType 
+																where roombooking.BookingID=:bookid";
+																$roomcategoryquery = $dbh -> prepare($roomcategorySQL);
+																$roomcategoryquery-> bindParam(':bookid', $roombookingid, PDO::PARAM_STR);
+																$roomcategoryquery->execute();  //**** stoké toutes les enregistrement de resultat de requètte SQL ****
+																$roomcategoryresults=$roomcategoryquery->fetchAll(PDO::FETCH_OBJ);
+																//var_dump($roomcategoryresults);
+																if($roomcategoryquery->rowCount() > 0)
+                                    							{  ?> 
+																	<tr><th colspan="4" style="color: blue;font-weight: bold;font-size: 15px">Détail de la pièce:</th></tr>
+																	<tr>
+																		<th style="text-align: center;">Type de chambre</th>
+																		<th style="text-align: center;">Prix parjour</th>
+																		<th style="text-align: center;">Nombre des jours</th>
+																		<th style="text-align: center;">Quantité par jour</th>
+																		<th style="text-align: center;">Prix du chambre</th>
+																		<th style="text-align: center;">Prix Total</th>
+																		<!--<td><img src="admin/images/<?php echo $RCBrow->Image;?>" width="100" height="100" value="<?php  echo $row->Image;?>"></td>-->
+																	</tr>
+																	<?php     
+																	foreach($roomcategoryresults as $RCBrow)
+																	{   ?>    
+																			<tr>
+																				<td style="text-align: center;"><?php  echo $RCBrow->CategoryName;?></td>
+																				<td style="text-align: center;"><?php  echo $RCBrow->Price;?></td>
+																				<td style="text-align: center;"><?php  echo $ddf=$RCBrow->ddf;?></td>
+																				<td style="text-align: center;"><?php  echo $qty= $RCBrow->Quantity;?></td>
+																				<td style="text-align: center;"><?php  echo $tp= $RCBrow->Price;?></td>
+																				<td style="text-align: center;"><?php  echo $total=$ddf*$qty*$tp;?></td>
+																			</tr>
+																			<?php 
+																			$grandtotal+=$total;
+																	} ?>
+																	<tr>
+																		<td style="text-align: center;"></td>
+																		<td style="text-align: center;"></td>
+																		<td style="text-align: center;"></td>
+																		<td style="text-align: center;"></td>
+																		<th style="text-align:center;color: blue">Total </th>
+																		<td style="text-align: center;"><?php  echo $grandtotal;?></td>
+																	</tr>
+ 																<?php } ?>
 															</tr>
 															<tr>
 																<th>Date de réservation</th>

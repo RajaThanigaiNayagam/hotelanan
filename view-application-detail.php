@@ -102,7 +102,7 @@ header('location:logout.php');
                                     <?php
                                     $roomcategorySQL="SELECT roombooking.ID as rbid,roombooking.Quantity,roomcategory.CategoryName,roomcategory.Description,roomcategory.Price,room.RoomName,room.MaxAdult,room.MaxChild,room.RoomDesc,room.NoofBed,room.Image,room.RoomFacility 
                                     from roombooking 
-                                    join room on roombooking.RoomId=room.ID 
+                                    join room on roombooking.roomID=room.ID 
                                     join roomcategory on roomcategory.ID=room.RoomType 
                                     where roombooking.BookingID=:vid";
                                     $roomcategoryquery = $dbh -> prepare($roomcategorySQL);

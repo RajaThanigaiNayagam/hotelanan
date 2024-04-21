@@ -54,7 +54,7 @@ header('location:logout.php');
                         join roomcategory on roomcategory.ID=room.RoomType 
                         join user on booking.UserID=user.ID  
                         where booking.ID=:vid";*/
-                        $sql="SELECT DATEDIFF(booking.CheckoutDate,booking.CheckinDate) as ddf,booking.BookingNumber,user.FullName,user.MobileNumber,user.Email,booking.ID as tid,booking.IDType,booking.Gender,booking.Address,booking.CheckinDate,booking.CheckoutDate,booking.BookingDate,booking.Remark,booking.Status,booking.UpdationDate
+                        $sql="SELECT (DATEDIFF(booking.CheckoutDate,booking.CheckinDate)+1) as ddf,booking.BookingNumber,user.FullName,user.MobileNumber,user.Email,booking.ID as tid,booking.IDType,booking.Gender,booking.Address,booking.CheckinDate,booking.CheckoutDate,booking.BookingDate,booking.Remark,booking.Status,booking.UpdationDate
                         from booking 
                         join user on booking.UserID=user.ID  
                         where booking.ID=:vid";
@@ -94,7 +94,8 @@ header('location:logout.php');
                                         <th>Date d'arrivée</th>
                                         <td><?php  echo $row->CheckinDate;?></td>
                                         <th>Date de départ</th>
-                                        <td><?php  echo $row->CheckoutDate;?></td>
+                                        <?php $checkoutdatePlusun = date('Y-m-d', strtotime($row->CheckoutDate .' +1 day'));?>
+                                        <td><?php echo $checkoutdatePlusun;?></td>
                                     </tr>
                                             
                                                 

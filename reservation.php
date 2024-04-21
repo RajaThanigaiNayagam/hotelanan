@@ -31,8 +31,8 @@ if (strlen($_SESSION['hotelanan']==0)) {
 				echo '<script>alert("La date de départ doit être supérieure à la date d\'arrivée")</script>';
 				//$datechoosed = 'NO';
 			} else if( (isset($RoomCategoryNB)) ){
-				
-				var_dump($RoomCategoryNB);
+				$checkoutdateMoinsun = date('Y-m-d', strtotime($checkoutdate .' -1 day'));
+				//var_dump($RoomCategoryNB);
 				$sql="insert into booking(RoomId,BookingNumber,UserID,IDType,Gender,Address,CheckinDate,CheckoutDate)values(:rid,:booknum,:uid,:idtype,:gender,:address,:checkindate,:checkoutdate)";
 				$query=$dbh->prepare($sql);
 				$query->bindParam(':rid',$rid,PDO::PARAM_STR);
@@ -42,7 +42,7 @@ if (strlen($_SESSION['hotelanan']==0)) {
 				$query->bindParam(':gender',$gender,PDO::PARAM_STR);
 				$query->bindParam(':address',$address,PDO::PARAM_STR);
 				$query->bindParam(':checkindate',$checkindate,PDO::PARAM_STR);
-				$query->bindParam(':checkoutdate',$checkoutdate,PDO::PARAM_STR);
+				$query->bindParam(':checkoutdate',$checkoutdateMoinsun,PDO::PARAM_STR);
 				$query->execute();
 				$LastInsertId=$dbh->lastInsertId();
 				if ($LastInsertId>0) {
@@ -214,7 +214,7 @@ if (strlen($_SESSION['hotelanan']==0)) {
 																		join booking on roombooking.BookingID=booking.ID 
 																		join room on roombooking.roomID=room.ID 
 																		join roomcategory on room.RoomType=roomcategory.ID
-																		where room.ID=:roomid and :ReservDate between booking.CheckinDate and ( DATEADD(day,-1,Convert( Date, booking.CheckoutDate ))  )"; //date('Y-m-d', strtotime(booking.CheckoutDate .' -1 day'))"; //-------- Requêtes sql pour recuperer toutes les enregistrement depuis la table "roomcategory" -------//
+																		where room.ID=:roomid and :ReservDate between booking.CheckinDate and booking.CheckoutDate";  //-------- Requêtes sql pour recuperer toutes les enregistrement depuis la table "roomcategory" -------//
 																		$query1 = $dbh -> prepare($ret);
 																		$query1-> bindParam(':roomid', $roomid, PDO::PARAM_STR);
 																		$query1-> bindParam(':ReservDate', $Reservationdate, PDO::PARAM_STR);

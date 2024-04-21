@@ -83,7 +83,7 @@ if (strlen($_SESSION['hotelanan']==0)) {
                                         </tr>
 
                                         <?php
-                                        $roomcategorySQL="SELECT DATEDIFF(booking.CheckoutDate,booking.CheckinDate) as ddf,roombooking.Quantity,roomcategory.CategoryName,roomcategory.Description,roomcategory.Price,room.RoomName,room.MaxAdult,room.MaxChild,room.RoomDesc,room.NoofBed,room.Image,room.RoomFacility 
+                                        $roomcategorySQL="SELECT (DATEDIFF(booking.CheckoutDate,booking.CheckinDate)+1) as ddf,roombooking.Quantity,roomcategory.CategoryName,roomcategory.Description,roomcategory.Price,room.RoomName,room.MaxAdult,room.MaxChild,room.RoomDesc,room.NoofBed,room.Image,room.RoomFacility 
                                         from booking 
                                         join roombooking on booking.ID=roombooking.BookingID
                                         join room on roombooking.roomID=room.ID 

@@ -46,7 +46,7 @@ if (strlen($_SESSION['hotelanan']==0)) {
 				$query->execute();
 				$LastInsertId=$dbh->lastInsertId();
 				if ($LastInsertId>0) {
-					var_dump($LastInsertId);
+					//var_dump($LastInsertId);
 					for ($i = 0; $i < sizeof($RoomCategoryID); $i++) {
 						if (  intval($RoomCategoryNB[$i]) > 0){	
 							$roombookingcategoryidn=$RoomCategoryID[$i];
@@ -209,13 +209,12 @@ if (strlen($_SESSION['hotelanan']==0)) {
 																if($datechoosed == 'YES'){
 																	$roomid=$rows->ID;
 																	$totRoom = intval($rows->RoomsAvail); 
-																	var_dump($totRoom); 
 																	foreach($Reservationdates as $Reservationdate){
 																		$ret="SELECT SUM(roombooking.Quantity) as qty from roombooking 
 																		join booking on roombooking.BookingID=booking.ID 
 																		join room on roombooking.roomID=room.ID 
 																		join roomcategory on room.RoomType=roomcategory.ID
-																		where room.ID=:roomid and :ReservDate between booking.CheckinDate and date(booking.CheckoutDate, strtotime(' -1 day'))"; // booking.CheckoutDate";  // date('Y-m-d', strtotime(booking.CheckoutDate .' -1 day'))"; //-------- Requêtes sql pour recuperer toutes les enregistrement depuis la table "roomcategory" -------//
+																		where room.ID=:roomid and :ReservDate between booking.CheckinDate and DATEADD(day, -1, booking.CheckoutDate)"; //date(booking.CheckoutDate, strtotime(' -1 day'))"; // booking.CheckoutDate";  // date('Y-m-d', strtotime(booking.CheckoutDate .' -1 day'))"; //-------- Requêtes sql pour recuperer toutes les enregistrement depuis la table "roomcategory" -------//
 																		//var_dump($ret); 
 																		$query1 = $dbh -> prepare($ret);
 																		$query1-> bindParam(':roomid', $roomid, PDO::PARAM_STR);

@@ -71,7 +71,8 @@ include('includephp/connectionbd.php');
 											<p>Lits : <?php  echo htmlentities($row->NoofBed);?></p>
 											<p>Équipements de la chambre:<?php  echo htmlentities($row->RoomFacility);?></p>
 											<p>Prix : <?php  echo htmlentities($row->Price);?> € </p>
-											<button class="reservebutton"><a href="book-room.php?rmid=<?php echo $row->rmid;?>">Réserver cette chambre</a></button><BR>
+											<!--<button class="reservebutton"><a href="book-room.php?rmid=<?php echo $row->rmid;?>">Réserver cette chambre</a></button><BR>-->
+											<button class="reservebutton"><a href="reservation.php?rmid=<?php echo $row->rmid;?>">Réserver cette chambre</a></button><BR>
 										</div>
 										<div class="clearfix"></div>
 									</div><BR><BR><BR>

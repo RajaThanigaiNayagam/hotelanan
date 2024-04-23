@@ -21,7 +21,7 @@
 				$_SESSION['hotelanan']=$result->ID;
 			}
 			$_SESSION['login']=$_POST['email'];
-			echo "<script type='text/javascript'> document.location ='index.php'; </script>";
+			echo "<script type='text/javascript'> document.location ='reservation.php'; </script>";
 		} else{
 			echo "<script>alert('Les details sont pas correct');</script>";
 		}

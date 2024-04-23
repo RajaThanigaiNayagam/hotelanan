@@ -132,11 +132,46 @@ if (strlen($_SESSION['hotelanan']==0)) {
 					
 					<?php
 					if (  ( $datechoosed == 'YES' )  and  ($checkindate <> $checkoutdate)  and  ($checkindate < $checkoutdate)  )  { ?>
-						<!--<div style="height:20px;"></div>-->
+						<!--<div style="height:20px;"></div>
+														<?php
+															$uid=$_SESSION['hotelanan'];
+															$sql="SELECT * from user where ID=:uid";
+															$query = $dbh -> prepare($sql);
+															$query->bindParam(':uid',$uid,PDO::PARAM_STR);
+															$query->execute();
+															$results=$query->fetchAll(PDO::FETCH_OBJ);
+															$cnt=1;
+															if($query->rowCount() > 0)
+															{
+																foreach($results as $row)
+																{               ?>
+																	<h5>Nom</h5>
+																	<input type="text"  value="<?php  echo $row->FullName;?>" name="name" class="form-control" required="true" readonly="true">
+																	<h5>Numéro de portable</h5>
+																	<input type="text" name="phone" class="form-control" required="true" maxlength="10" pattern="[0-9]+" value="<?php  echo $row->MobileNumber;?>" readonly="true">
+																	<h5>Adresse e-mail</h5>
+																	<input  type="email" value="<?php  echo $row->Email;?>" class="form-control" name="email" required="true" readonly="true"><?php $cnt=$cnt+1;
+																}
+															} ?>
+														<h5>Type d'identification</h5>
+														<select  type="text" value="" class="form-control" name="idtype" required="true" class="form-control">
+															<option value="">Choisissez le type d'identification</option>
+															<option value="Voter Card">carte d'électeur</option>
+															<option value="Adhar Card">carte d'identité</option>
+															<option value="Driving Licence Card">Permis de conduire</option>
+															<option value="Passport">Passport</option>
+														</select>
+														<h5>Le genre</h5>
+														<p style="text-align: left;"> <input type="radio"  name="gender" id="gender" value="Female" checked="true">féminin</p>
+														<p style="text-align: left;"> <input type="radio" name="gender" id="gender" value="Male">masculin</p>
+														<h5>Adresse</h5>
+														<textarea type="text" rows="3" name="address" required="true"></textarea>
+														-->
 						<form method="post">
 							<div class="col-md-12 text-center" style="text-align:center;">
 								<div class="text-center" style="text-align:center;">
 									<div style="text-align:center; display: flex; justify-content: center;">
+									
 										<!--<table border="1" class="table table-bordered text-center table-striped table-vcenter js-dataTable-full-pagination">-->
 										<table border="1" class="table-res table-bordered table-striped table-vcenter">	
 											<thead>
@@ -149,40 +184,8 @@ if (strlen($_SESSION['hotelanan']==0)) {
 												</tr>
 											</thead>
 											<tbody>
-												<?php
-													$uid=$_SESSION['hotelanan'];
-													$sql="SELECT * from user where ID=:uid";
-													$query = $dbh -> prepare($sql);
-													$query->bindParam(':uid',$uid,PDO::PARAM_STR);
-													$query->execute();
-													$results=$query->fetchAll(PDO::FETCH_OBJ);
-													$cnt=1;
-													if($query->rowCount() > 0)
-													{
-														foreach($results as $row)
-														{               ?>
-															<!--<h5>Nom</h5>
-															<input type="text"  value="<?php  echo $row->FullName;?>" name="name" class="form-control" required="true" readonly="true">
-															<h5>Numéro de portable</h5>
-															<input type="text" name="phone" class="form-control" required="true" maxlength="10" pattern="[0-9]+" value="<?php  echo $row->MobileNumber;?>" readonly="true">
-															<h5>Adresse e-mail</h5>
-															<input  type="email" value="<?php  echo $row->Email;?>" class="form-control" name="email" required="true" readonly="true"><?php $cnt=$cnt+1;
-														}
-													} ?>
-												<h5>Type d'identification</h5>
-												<select  type="text" value="" class="form-control" name="idtype" required="true" class="form-control">
-													<option value="">Choisissez le type d'identification</option>
-													<option value="Voter Card">carte d'électeur</option>
-													<option value="Adhar Card">carte d'identité</option>
-													<option value="Driving Licence Card">Permis de conduire</option>
-													<option value="Passport">Passport</option>
-												</select>
-												<h5>Le genre</h5>
-												<p style="text-align: left;"> <input type="radio"  name="gender" id="gender" value="Female" checked="true">féminin</p>
-												<p style="text-align: left;"> <input type="radio" name="gender" id="gender" value="Male">masculin</p>
-												<h5>Adresse</h5>
-												<textarea type="text" rows="3" name="address" required="true"></textarea>
-												-->
+														
+												
 												<?php
 													$NbRoomsForCategoryCount=0;
 													//$ArrayReservationDates=0;
